@@ -1,0 +1,147 @@
+---
+title: Styles
+description: CSS custom properties, layout adjustments, and component styling in custom.css.
+sidebar:
+  order: 2
+---
+
+All custom styles live in `styles/custom.css`. This file is loaded by `astro.config.mjs` through the Starlight `customCss` option.
+
+## CSS Custom Properties
+
+```css
+:root {
+  --sl-font: "proximaNova", -apple-system, "system-ui", "Segoe UI", Helvetica, Arial, sans-serif;
+  --sl-content-width: 60rem;
+  --sl-sidebar-width: 15rem;
+}
+```
+
+| Variable | Value | Purpose |
+|----------|-------|---------|
+| `--sl-font` | `"proximaNova", ...` | Default body font family (Starlight variable) |
+| `--sl-content-width` | `60rem` | Maximum width of the main content area |
+| `--sl-sidebar-width` | `15rem` | Width of the left navigation sidebar |
+
+## Heading Font Override
+
+```css
+h1, h2, h3, h4, h5, h6 {
+  font-family: "neusaNextProWide", -apple-system, "system-ui", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+```
+
+All headings use the Neusa Next Pro Wide font family instead of the body font.
+
+## Layout: Right Sidebar
+
+```css
+@media (min-width: 72rem) {
+  .right-sidebar-container {
+    max-width: 11rem;
+  }
+}
+```
+
+On wide viewports, the table-of-contents sidebar on the right is constrained to `11rem` to give more space to the main content area.
+
+## Mermaid Diagram Containers
+
+```css
+.mermaid-container {
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 8px 16px rgba(0,0,0,0.08), 0 24px 48px rgba(0,0,0,0.12);
+  margin-block: 1.5rem;
+  background: #fff;
+}
+```
+
+Mermaid diagrams are wrapped in a styled container with rounded corners and a layered box shadow. The SVG inside is forced to a white background for dark mode compatibility:
+
+```css
+.mermaid-container svg {
+  background: white !important;
+  border-radius: 0.5rem;
+}
+```
+
+## Callout / Aside Styling
+
+```css
+.starlight-aside {
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 8px 16px rgba(0,0,0,0.08), 0 24px 48px rgba(0,0,0,0.12);
+}
+```
+
+Starlight's built-in aside components (note, tip, caution, danger) get rounded corners and the same layered shadow used across all card-like elements.
+
+## Code Block Styling
+
+```css
+.expressive-code .frame {
+  --header-border-radius: 0.75rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 8px 16px rgba(0,0,0,0.08), 0 24px 48px rgba(0,0,0,0.12);
+}
+```
+
+All code blocks get rounded corners and the layered shadow treatment.
+
+## Terminal Code Blocks
+
+Terminal-style code blocks (fenced with ` ```bash ` or ` ```sh `) receive an iTerm-inspired window frame:
+
+```css
+.expressive-code .frame.is-terminal {
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+```
+
+### Window Controls
+
+The header displays macOS-style traffic light dots (close, minimize, maximize) using an inline SVG data URI:
+
+```css
+.expressive-code .frame.is-terminal .header::before {
+  background: url("data:image/svg+xml,...") no-repeat center / contain !important;
+  width: 52px;
+  height: 12px;
+}
+```
+
+### Dark Header
+
+```css
+.expressive-code .frame.is-terminal .header {
+  background: #323232 !important;
+  color: #ccc !important;
+}
+```
+
+### Theme-Aware Borders
+
+```css
+/* Dark mode (default) */
+.expressive-code .frame.is-terminal {
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Light mode */
+:root[data-theme="light"] .expressive-code .frame.is-terminal {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+```
+
+### Dark Mode Terminal Background
+
+```css
+:root:not([data-theme="light"]) .expressive-code .frame.is-terminal pre {
+  background: #1a1b26 !important;
+}
+```
+
+In dark mode, the terminal body uses a Tokyo Night-inspired dark background (`#1a1b26`).
