@@ -17,7 +17,16 @@ jobs:
           TAG="${{ github.event.release.tag_name }}"
           VERSION="${TAG#v}"
           echo "Checking npm for @robinmordasiewicz/f5xc-docs-theme@${VERSION}..."
-          npm view "@robinmordasiewicz/f5xc-docs-theme@${VERSION}" version
+          for i in 1 2 3 4 5; do
+            if npm view "@robinmordasiewicz/f5xc-docs-theme@${VERSION}" version 2>/dev/null; then
+              echo "Version ${VERSION} confirmed on npm"
+              exit 0
+            fi
+            echo "Attempt ${i}: not found yet, waiting 15s for npm propagation..."
+            sleep 15
+          done
+          echo "::error::Version ${VERSION} not found on npm after 5 attempts"
+          exit 1
 
       - name: Dispatch rebuild-image event
         uses: peter-evans/repository-dispatch@v3
