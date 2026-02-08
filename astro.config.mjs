@@ -2,10 +2,14 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
 import f5xcDocsTheme from 'f5xc-docs-theme';
+import remarkMermaid from './src/plugins/remark-mermaid.mjs';
 
 export default defineConfig({
   site: process.env.DOCS_SITE || 'https://robinmordasiewicz.github.io',
   base: process.env.DOCS_BASE || '/',
+  markdown: {
+    remarkPlugins: [remarkMermaid],
+  },
   integrations: [
     starlight({
       title: process.env.DOCS_TITLE || 'Documentation',
@@ -23,7 +27,7 @@ export default defineConfig({
       sidebar: [
         {
           label: process.env.SIDEBAR_LABEL || 'Guide',
-          autogenerate: { directory: '/' },
+          autogenerate: { directory: '.' },
         },
       ],
     }),
