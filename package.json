@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/robinmordasiewicz/f5xc-docs-theme"
   },
+  "bugs": {
+    "url": "https://github.com/robinmordasiewicz/f5xc-docs-theme/issues"
+  },
   "exports": {
     ".": "./index.ts",
     "./fonts/font-face.css": "./fonts/font-face.css",
