@@ -12,6 +12,13 @@ jobs:
     name: Notify f5xc-docs-builder
     runs-on: ubuntu-latest
     steps:
+      - name: Verify npm package version exists
+        run: |
+          TAG="${{ github.event.release.tag_name }}"
+          VERSION="${TAG#v}"
+          echo "Checking npm for @robinmordasiewicz/f5xc-docs-theme@${VERSION}..."
+          npm view "@robinmordasiewicz/f5xc-docs-theme@${VERSION}" version
+
       - name: Dispatch rebuild-image event
         uses: peter-evans/repository-dispatch@v3
         with:
