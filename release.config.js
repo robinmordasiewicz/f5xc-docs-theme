@@ -9,7 +9,6 @@ export default {
         { type: 'fix', release: 'patch' },
         { type: 'perf', release: 'patch' },
         { type: 'revert', release: 'patch' },
-        { type: 'docs', release: 'patch' },
         { type: 'style', release: 'patch' },
         { type: 'refactor', release: 'patch' },
         { type: 'test', release: 'patch' },
