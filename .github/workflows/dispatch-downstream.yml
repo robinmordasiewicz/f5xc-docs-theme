@@ -1,0 +1,21 @@
+name: Dispatch Downstream Rebuild
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  dispatch:
+    name: Notify f5xc-docs-builder
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch rebuild-image event
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.REPO_ADMIN_TOKEN }}
+          repository: robinmordasiewicz/f5xc-docs-builder
+          event-type: rebuild-image
+          client-payload: '{"version": "${{ github.event.release.tag_name }}", "source_repo": "${{ github.repository }}"}'
