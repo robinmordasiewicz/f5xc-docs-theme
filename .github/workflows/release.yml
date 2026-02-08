@@ -3,6 +3,17 @@ name: Release
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'docs/**'
+      - '.github/**'
+      - '.editorconfig'
+      - '.gitignore'
+      - 'CLAUDE.md'
+      - 'CONTRIBUTING.md'
+      - 'README.md'
+      - 'LICENSE'
+      - 'release.config.js'
+  workflow_dispatch:
 
 permissions:
   contents: write
