@@ -4,6 +4,7 @@
   "description": "F5 Distributed Cloud branded Starlight documentation theme",
   "type": "module",
   "license": "MIT",
+  "homepage": "https://robinmordasiewicz.github.io/f5xc-docs-theme",
   "repository": {
     "type": "git",
     "url": "https://github.com/robinmordasiewicz/f5xc-docs-theme"
