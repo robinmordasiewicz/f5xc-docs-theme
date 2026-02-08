@@ -1,30 +1,17 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
-import remarkMermaid from './src/plugins/remark-mermaid.mjs';
-
-const title = process.env.DOCS_TITLE || 'Documentation';
-const site = process.env.DOCS_SITE || 'https://robinmordasiewicz.github.io';
-const base = process.env.DOCS_BASE || '/';
+import f5xcDocsTheme from 'f5xc-docs-theme';
 
 export default defineConfig({
-  site,
-  base,
-  markdown: {
-    remarkPlugins: [remarkMermaid],
-  },
+  site: process.env.DOCS_SITE || 'https://robinmordasiewicz.github.io',
+  base: process.env.DOCS_BASE || '/',
   integrations: [
     starlight({
-      title,
-      customCss: [
-        './theme/fonts/font-face.css',
-        './theme/styles/custom.css',
-      ],
+      title: process.env.DOCS_TITLE || 'Documentation',
+      plugins: [f5xcDocsTheme()],
       logo: {
-        src: './theme/assets/f5-logo.svg',
-      },
-      components: {
-        Footer: './theme/components/Footer.astro',
+        src: 'f5xc-docs-theme/assets/f5-logo.svg',
       },
       social: [
         {
