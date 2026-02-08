@@ -24,12 +24,6 @@ export default defineConfig({
           href: `https://github.com/${process.env.GITHUB_REPOSITORY || ''}`,
         },
       ],
-      sidebar: [
-        {
-          label: process.env.SIDEBAR_LABEL || 'Guide',
-          autogenerate: { directory: '.' },
-        },
-      ],
     }),
     react(),
   ],

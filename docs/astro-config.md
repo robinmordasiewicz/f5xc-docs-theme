@@ -45,12 +45,6 @@ export default defineConfig({
           href: `https://github.com/${process.env.GITHUB_REPOSITORY || ''}`,
         },
       ],
-      sidebar: [
-        {
-          label: process.env.SIDEBAR_LABEL || 'Guide',
-          autogenerate: { directory: '/' },
-        },
-      ],
     }),
     react(),
   ],
@@ -81,7 +75,7 @@ const site = process.env.DOCS_SITE || 'https://robinmordasiewicz.github.io';
 const base = process.env.DOCS_BASE || '/';
 ```
 
-These are read at build time and allow each content repository to customize the site without modifying the config. See the [Environment Variables](/environment-variables) page for full details.
+These are read at build time and allow each content repository to customize the site without modifying the config. See the [Environment Variables](./environment-variables) page for full details.
 
 ### Markdown Configuration
 
@@ -142,16 +136,7 @@ Adds a GitHub icon link in the site header. The URL is built dynamically from th
 
 #### Sidebar
 
-```js
-sidebar: [
-  {
-    label: process.env.SIDEBAR_LABEL || 'Guide',
-    autogenerate: { directory: '/' },
-  },
-],
-```
-
-Creates a single sidebar group that auto-generates entries from all Markdown files in the content `docs/` directory. The label is configurable via the `SIDEBAR_LABEL` environment variable.
+No custom sidebar is defined. Starlight auto-generates the sidebar from the file structure in `docs/`, using each page's `title` frontmatter as the link text and `sidebar.order` for sorting.
 
 ### React Integration
 

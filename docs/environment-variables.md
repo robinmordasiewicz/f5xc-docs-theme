@@ -5,7 +5,7 @@ sidebar:
   order: 6
 ---
 
-The `astro.config.mjs` reads five environment variables at build time. Content repositories set these in their GitHub Actions workflow to customize each site without forking the theme.
+The `astro.config.mjs` reads four environment variables at build time. Content repositories set these in their GitHub Actions workflow to customize each site without forking the theme.
 
 ## Variable Reference
 
@@ -15,7 +15,6 @@ The `astro.config.mjs` reads five environment variables at build time. Content r
 | `DOCS_SITE` | `https://robinmordasiewicz.github.io` | Canonical base URL for the deployed site |
 | `DOCS_BASE` | `/` | URL base path (e.g., `/my-repo/` for project sites) |
 | `GITHUB_REPOSITORY` | _(empty string)_ | Used to build the GitHub social link in the header |
-| `SIDEBAR_LABEL` | `Guide` | Label for the auto-generated sidebar section |
 
 ## Where Each Variable Is Used
 
@@ -55,19 +54,6 @@ Sets Astro's top-level `base` property. Required when deploying to a subdirector
 
 Used in the Starlight `social` array to generate the GitHub link in the site header. GitHub Actions sets this variable automatically (e.g., `owner/repo`).
 
-### SIDEBAR_LABEL
-
-```js
-sidebar: [
-  {
-    label: process.env.SIDEBAR_LABEL || 'Guide',
-    autogenerate: { directory: '/' },
-  },
-],
-```
-
-Controls the label text for the top-level sidebar group. Each content repo can set this to something descriptive like `Tutorials` or `API Reference`.
-
 ## Setting Variables in GitHub Actions
 
 Content repositories pass these variables through their workflow:
@@ -80,7 +66,6 @@ jobs:
       docs_title: "My Project Docs"
       docs_site: "https://example.github.io"
       docs_base: "/my-project/"
-      sidebar_label: "Tutorials"
 ```
 
 The `GITHUB_REPOSITORY` variable is provided automatically by the GitHub Actions runner and does not need to be set manually.
