@@ -2,7 +2,7 @@
 title: Environment Variables
 description: Reference for all environment variables supported by the theme's astro.config.mjs.
 sidebar:
-  order: 2
+  order: 6
 ---
 
 The `astro.config.mjs` reads five environment variables at build time. Content repositories set these in their GitHub Actions workflow to customize each site without forking the theme.

@@ -1,5 +1,5 @@
 ---
-title: F5 XC Docs Theme
+title: XC Docs Theme
 description: Shared branding and styling layer for all F5 Distributed Cloud documentation sites.
 template: splash
 hero:
@@ -7,44 +7,9 @@ hero:
   tagline: Shared branding, fonts, and styling for every F5 Distributed Cloud documentation site — consumed at build time, zero duplication.
   actions:
     - text: Get Started
-      link: /getting-started/
+      link: /fonts/
       icon: right-arrow
       variant: primary
-    - text: View on GitHub
-      link: https://github.com/robinmordasiewicz/f5xc-docs-theme
-      icon: external
-      variant: minimal
 sidebar:
   hidden: true
 ---
-
-import { Card, CardGrid } from '@astrojs/starlight/components';
-
-<CardGrid stagger>
-  <Card title="Custom Fonts" icon="pencil">
-    Neusa Next Pro Wide for headings and Proxima Nova for body text, loaded as optimized woff2 web fonts.
-  </Card>
-  <Card title="Branded Styles" icon="seti:css">
-    CSS custom properties, Mermaid diagram containers, callout boxes, and iTerm-style terminal code blocks.
-  </Card>
-  <Card title="F5 Logo" icon="star">
-    SVG logo displayed in the sidebar of every documentation site built with this theme.
-  </Card>
-  <Card title="Social Footer" icon="heart">
-    Custom Starlight footer component with F5 social media links for Facebook, X, LinkedIn, Instagram, and YouTube.
-  </Card>
-</CardGrid>
-
-## How It Works
-
-This repository is **not a standalone site**. It is a theme layer consumed at build time by content repositories through the [f5xc-docs-builder](https://github.com/robinmordasiewicz/f5xc-docs-builder) reusable workflow.
-
-```
-Content repo push
-  → f5xc-docs-builder workflow runs
-    → Checks out this theme into ./theme/
-    → Astro build references theme fonts, styles, logo, and footer
-    → Site deploys with consistent F5 branding
-```
-
-Updating a file in this repository propagates to every documentation site on its next build.

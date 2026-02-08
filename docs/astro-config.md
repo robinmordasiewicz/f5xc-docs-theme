@@ -2,7 +2,7 @@
 title: Astro Configuration
 description: Line-by-line reference for astro.config.mjs.
 sidebar:
-  order: 1
+  order: 5
 ---
 
 The `astro.config.mjs` file is the shared Astro/Starlight configuration used by every documentation site built with this theme. It is read by the builder at build time.
@@ -81,7 +81,7 @@ const site = process.env.DOCS_SITE || 'https://robinmordasiewicz.github.io';
 const base = process.env.DOCS_BASE || '/';
 ```
 
-These are read at build time and allow each content repository to customize the site without modifying the config. See the [Environment Variables](/getting-started/environment-variables/) page for full details.
+These are read at build time and allow each content repository to customize the site without modifying the config. See the [Environment Variables](/environment-variables) page for full details.
 
 ### Markdown Configuration
 
