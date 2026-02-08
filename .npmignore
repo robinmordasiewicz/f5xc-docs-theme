@@ -1,0 +1,9 @@
+docs/
+.github/
+.editorconfig
+.gitignore
+CLAUDE.md
+CONTRIBUTING.md
+README.md
+LICENSE
+astro.config.mjs

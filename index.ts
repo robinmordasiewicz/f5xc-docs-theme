@@ -1,0 +1,23 @@
+import type { StarlightPlugin } from '@astrojs/starlight/types';
+
+export default function f5xcDocsTheme(): StarlightPlugin {
+  return {
+    name: 'f5xc-docs-theme',
+    hooks: {
+      setup({ config, updateConfig, logger }) {
+        updateConfig({
+          customCss: [
+            ...config.customCss,
+            'f5xc-docs-theme/fonts/font-face.css',
+            'f5xc-docs-theme/styles/custom.css',
+          ],
+          components: {
+            ...config.components,
+            Footer: 'f5xc-docs-theme/components/Footer.astro',
+          },
+        });
+        logger.info('F5 XC docs theme loaded');
+      },
+    },
+  };
+}
