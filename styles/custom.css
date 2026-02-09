@@ -95,12 +95,36 @@
 /* ===== Fonts & Layout ===== */
 :root {
   --sl-font: "proximaNova", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  --sl-font-heading: "neusaNextProWide", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
   --sl-content-width: 60rem;
   --sl-sidebar-width: 15rem;
+
+  /* Typography scale mapped to F5 hierarchy */
+  --sl-line-height-headings: 1.1;
+  --sl-text-h1: var(--sl-text-5xl);
+  --sl-text-h2: var(--sl-text-3xl);
+  --sl-text-h3: var(--sl-text-2xl);
+  --sl-text-h4: var(--sl-text-lg);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "neusaNextProWide", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: var(--sl-font-heading);
+}
+
+/* F5 type hierarchy weights */
+h1, h2 {
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+h4, h5, h6 {
+  font-family: var(--sl-font);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 @media (min-width: 72rem) {
