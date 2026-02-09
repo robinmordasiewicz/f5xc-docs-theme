@@ -217,12 +217,22 @@ h4, h5, h6 {
 }
 
 /* Breadcrumb navigation */
+.breadcrumbs {
+  position: sticky;
+  top: var(--sl-nav-height, 3.5rem);
+  z-index: 1;
+  background: var(--sl-color-black);
+  padding-block: 0.5rem;
+  margin-inline: -1rem;
+  padding-inline: 1rem;
+}
+
 .breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
-  margin: 0 0 0.5rem;
+  margin: 0;
   font-size: 0.85rem;
   color: var(--sl-color-gray-3);
 }
