@@ -17,6 +17,11 @@ export default defineConfig({
       logo: {
         src: 'f5xc-docs-theme/assets/f5-logo.svg',
       },
+      ...(process.env.GITHUB_REPOSITORY ? {
+        editLink: {
+          baseUrl: `https://github.com/${process.env.GITHUB_REPOSITORY}/edit/main/`,
+        },
+      } : {}),
       social: [
         {
           label: 'GitHub',
