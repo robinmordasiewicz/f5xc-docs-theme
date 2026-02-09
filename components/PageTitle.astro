@@ -18,6 +18,9 @@ function findTrail(entries: typeof sidebar, trail: { label: string }[] = []): { 
 }
 
 const trail = findTrail(sidebar) || [];
+const fixedEditUrl = editUrl
+  ? editUrl.href.replace('/src/content/docs/', '/docs/')
+  : undefined;
 ---
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -29,8 +32,8 @@ const trail = findTrail(sidebar) || [];
     ))}
     <li aria-current="page"><span>{entry.data.title}</span></li>
   </ol>
-  {editUrl && (
-    <a href={editUrl.href} target="_blank" rel="noopener noreferrer" class="edit-link">
+  {fixedEditUrl && (
+    <a href={fixedEditUrl} target="_blank" rel="noopener noreferrer" class="edit-link">
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
         fill="none" stroke="currentColor" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
