@@ -7,6 +7,7 @@ import starlightScrollToTop from 'starlight-scroll-to-top';
 import starlightImageZoom from 'starlight-image-zoom';
 import starlightHeadingBadges from 'starlight-heading-badges';
 import starlightVideosPlugin from 'starlight-videos';
+import starlightPageActions from 'starlight-page-actions';
 import starlightLlmsTxt from 'starlight-llms-txt';
 
 export default defineConfig({
@@ -32,6 +33,7 @@ export default defineConfig({
         starlightImageZoom(),
         starlightHeadingBadges(),
         starlightVideosPlugin(),
+        starlightPageActions(),
         starlightLlmsTxt({
           projectName: process.env.DOCS_TITLE || 'Documentation',
           description: process.env.DOCS_DESCRIPTION || '',
