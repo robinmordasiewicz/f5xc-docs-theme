@@ -17,6 +17,7 @@
     "./fonts/font-face.css": "./fonts/font-face.css",
     "./styles/custom.css": "./styles/custom.css",
     "./components/Footer.astro": "./components/Footer.astro",
+    "./components/SiteTitle.astro": "./components/SiteTitle.astro",
     "./assets/f5-logo.svg": "./assets/f5-logo.svg"
   },
   "files": [

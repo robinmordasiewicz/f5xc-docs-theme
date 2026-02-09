@@ -4,7 +4,7 @@ export default function f5xcDocsTheme(): StarlightPlugin {
   return {
     name: 'f5xc-docs-theme',
     hooks: {
-      setup({ config, updateConfig, logger }) {
+      'config:setup'({ config, updateConfig, logger }) {
         updateConfig({
           customCss: [
             ...config.customCss,
@@ -14,6 +14,7 @@ export default function f5xcDocsTheme(): StarlightPlugin {
           components: {
             ...config.components,
             Footer: 'f5xc-docs-theme/components/Footer.astro',
+            SiteTitle: 'f5xc-docs-theme/components/SiteTitle.astro',
           },
         });
         logger.info('F5 XC docs theme loaded');
