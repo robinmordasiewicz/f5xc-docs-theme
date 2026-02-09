@@ -3,6 +3,7 @@ import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
 import f5xcDocsTheme from 'f5xc-docs-theme';
 import remarkMermaid from './src/plugins/remark-mermaid.mjs';
+import starlightLlmsTxt from 'starlight-llms-txt';
 
 export default defineConfig({
   site: process.env.DOCS_SITE || 'https://robinmordasiewicz.github.io',
@@ -13,7 +14,13 @@ export default defineConfig({
   integrations: [
     starlight({
       title: process.env.DOCS_TITLE || 'Documentation',
-      plugins: [f5xcDocsTheme()],
+      plugins: [
+        f5xcDocsTheme(),
+        starlightLlmsTxt({
+          projectName: process.env.DOCS_TITLE || 'Documentation',
+          description: process.env.DOCS_DESCRIPTION || '',
+        }),
+      ],
       logo: {
         src: 'f5xc-docs-theme/assets/f5-logo.svg',
       },
