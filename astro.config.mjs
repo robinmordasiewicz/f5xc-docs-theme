@@ -6,6 +6,7 @@ import remarkMermaid from './src/plugins/remark-mermaid.mjs';
 import starlightScrollToTop from 'starlight-scroll-to-top';
 import starlightImageZoom from 'starlight-image-zoom';
 import starlightHeadingBadges from 'starlight-heading-badges';
+import starlightVideosPlugin from 'starlight-videos';
 import starlightLlmsTxt from 'starlight-llms-txt';
 
 export default defineConfig({
@@ -30,6 +31,7 @@ export default defineConfig({
         }),
         starlightImageZoom(),
         starlightHeadingBadges(),
+        starlightVideosPlugin(),
         starlightLlmsTxt({
           projectName: process.env.DOCS_TITLE || 'Documentation',
           description: process.env.DOCS_DESCRIPTION || '',
