@@ -3,6 +3,7 @@ import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
 import f5xcDocsTheme from 'f5xc-docs-theme';
 import remarkMermaid from './src/plugins/remark-mermaid.mjs';
+import starlightScrollToTop from 'starlight-scroll-to-top';
 import starlightLlmsTxt from 'starlight-llms-txt';
 
 export default defineConfig({
@@ -16,6 +17,15 @@ export default defineConfig({
       title: process.env.DOCS_TITLE || 'Documentation',
       plugins: [
         f5xcDocsTheme(),
+        starlightScrollToTop({
+          showTooltip: true,
+          tooltipText: 'Scroll to top',
+          smoothScroll: true,
+          threshold: 10,
+          showProgressRing: true,
+          progressRingColor: '#e4002b',
+          showOnHomepage: false,
+        }),
         starlightLlmsTxt({
           projectName: process.env.DOCS_TITLE || 'Documentation',
           description: process.env.DOCS_DESCRIPTION || '',

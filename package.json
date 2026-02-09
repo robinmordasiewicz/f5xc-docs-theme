@@ -46,5 +46,8 @@
   },
   "peerDependencies": {
     "@astrojs/starlight": ">=0.34.0"
+  },
+  "dependencies": {
+    "starlight-scroll-to-top": "^0.4.0"
   }
 }
