@@ -2,7 +2,7 @@
 import Default from '@astrojs/starlight/components/PageTitle.astro';
 
 const docsHome = process.env.DOCS_HOME || 'https://robinmordasiewicz.github.io/f5xc-docs/';
-const { sidebar, entry } = Astro.locals.starlightRoute;
+const { sidebar, entry, siteTitle } = Astro.locals.starlightRoute;
 
 function findTrail(entries: typeof sidebar, trail: { label: string }[] = []): { label: string }[] | null {
   for (const item of entries) {
@@ -23,6 +23,7 @@ const trail = findTrail(sidebar) || [];
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <ol>
     <li><a href={docsHome}>Home</a></li>
+    <li><a href={import.meta.env.BASE_URL}>{siteTitle}</a></li>
     {trail.map((crumb) => (
       <li><span>{crumb.label}</span></li>
     ))}
