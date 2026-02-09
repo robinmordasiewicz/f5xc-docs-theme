@@ -16,7 +16,6 @@ export default function f5xcDocsTheme(): StarlightPlugin {
             Banner: 'f5xc-docs-theme/components/Banner.astro',
             Footer: 'f5xc-docs-theme/components/Footer.astro',
             SiteTitle: 'f5xc-docs-theme/components/SiteTitle.astro',
-            PageTitle: 'f5xc-docs-theme/components/PageTitle.astro',
           },
         });
         logger.info('F5 XC docs theme loaded');
