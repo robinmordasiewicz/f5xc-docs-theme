@@ -8,6 +8,7 @@ import starlightImageZoom from 'starlight-image-zoom';
 import starlightHeadingBadges from 'starlight-heading-badges';
 import starlightVideosPlugin from 'starlight-videos';
 import starlightPageActions from 'starlight-page-actions';
+import { starlightIconsPlugin } from 'starlight-plugin-icons';
 import starlightLlmsTxt from 'starlight-llms-txt';
 
 export default defineConfig({
@@ -34,6 +35,7 @@ export default defineConfig({
         starlightHeadingBadges(),
         starlightVideosPlugin(),
         starlightPageActions(),
+        starlightIconsPlugin(),
         starlightLlmsTxt({
           projectName: process.env.DOCS_TITLE || 'Documentation',
           description: process.env.DOCS_DESCRIPTION || '',
