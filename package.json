@@ -16,6 +16,7 @@
     ".": "./index.ts",
     "./fonts/font-face.css": "./fonts/font-face.css",
     "./styles/custom.css": "./styles/custom.css",
+    "./components/Banner.astro": "./components/Banner.astro",
     "./components/Footer.astro": "./components/Footer.astro",
     "./components/SiteTitle.astro": "./components/SiteTitle.astro",
     "./components/PageTitle.astro": "./components/PageTitle.astro",
