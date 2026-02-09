@@ -1,162 +1,171 @@
 ---
 title: Color Style Guide
-description: F5 brand color palette reference for theme development — primary colors, tints, shades, and Starlight CSS custom property mapping.
+description: F5 brand color palette reference for theme development — primary colors, tints, shades, CMYK, LESS variables, and Starlight CSS custom property mapping.
 sidebar:
   order: 3
 ---
 
-F5's color system uses seven primary brand colors plus black and white, each with four tint/shade variants for a total of **45 colors**. This page is the single source of truth for mapping F5 brand colors to Starlight CSS custom properties during theme development.
+The full range of our color palette is used in graphics and illustrations, exploring unique and modern combinations as well as monochromatic contrasts. It can be used to highlight a specific topic or point of emphasis.
+
+The flexibility of F5's comprehensive color system allows us to craft modern, bright, and optimistic visual expressions with different color combinations. Each base color in the palette is complimented by lighter and darker accents, creating freedom for visual storytelling while maintaining consistency and a strong connection to the brand.
+
+F5's palette uses seven primary brand colors plus black and white, each with four tint/shade variants for a total of **45 colors**. This page is the single source of truth for mapping F5 brand colors to Starlight CSS custom properties during theme development.
 
 Source: [F5 Brand Center — Colors](https://brand.f5.com/d/yYzHXTsZ4EGq/elements#/-/colors)
 
 ## Primary Colors
 
-| Name | HEX | RGB | PMS | CSS Variable |
-|------|-----|-----|-----|--------------|
-| F5 Red | `#e4002b` | 228, 0, 43 | 185 | `--f5-red` |
-| Tangerine | `#f29a36` | 242, 154, 54 | 1375 | `--f5-tangerine` |
-| River | `#0e41aa` | 14, 65, 170 | 293 | `--f5-river` |
-| Raspberry | `#ab2782` | 171, 39, 130 | 241 | `--f5-raspberry` |
-| Jade | `#009639` | 0, 150, 57 | 355 | `--f5-jade` |
-| Eggplant | `#62228b` | 98, 34, 139 | 2617 | `--f5-eggplant` |
-| Bay | `#0072b0` | 0, 114, 176 | 7461 | `--f5-bay` |
-| White | `#ffffff` | 255, 255, 255 | — | `--f5-white` |
-| Black | `#000000` | 0, 0, 0 | Black | `--f5-black` |
+| Name | HEX | RGB | CMYK | LESS | PMS | CSS Variable |
+|------|-----|-----|------|------|-----|--------------|
+| F5 Red | `#e4002b` | 228, 0, 43 | 0, 100, 81, 11 | `monza` | 185 | `--f5-red` |
+| Tangerine | `#f29a36` | 242, 154, 54 | 0, 36, 78, 5 | `carrot-orange` | 1375 | `--f5-tangerine` |
+| River | `#0e41aa` | 14, 65, 170 | 92, 62, 0, 33 | `tory-blue` | 293 | `--f5-river` |
+| Raspberry | `#ab2782` | 171, 39, 130 | 0, 77, 24, 33 | — | 241 | `--f5-raspberry` |
+| Jade | `#009639` | 0, 150, 57 | 100, 0, 62, 41 | `fun-green` | 355 | `--f5-jade` |
+| Eggplant | `#62228b` | 98, 34, 139 | 29, 76, 0, 45 | `honey-flower` | 2617 | `--f5-eggplant` |
+| Bay | `#0072b0` | 0, 114, 176 | 100, 35, 0, 31 | — | 7461 | `--f5-bay` |
+| White | `#ffffff` | 255, 255, 255 | 0, 0, 0, 0 | `alabaster` | — | `--f5-white` |
+| Black | `#000000` | 0, 0, 0 | 60, 50, 40, 100 | `black` | Black | `--f5-black` |
+
+> **Note on LESS names**: The Brand Center shows Raspberry as `tory-blue` and Bay as `honey-flower` — these are copy-paste errors from the River and Eggplant entries respectively. They are marked `—` above to avoid propagating incorrect values.
 
 ## Secondary Colors (Tints & Shades)
 
 Each primary color has four variants ordered from lightest (Level 1) to darkest (Level 4).
 
+The Brand Center assigns LESS variable names to secondary colors. F5 Red and Tangerine variants have unique, meaningful names. All other color groups display the same placeholder names (`wewak`, `froly`, `carmine`, `venetian-red`) — these are template defaults from the brand platform and are included below for completeness but should not be relied upon as canonical identifiers.
+
 ### F5 Red
 
-| Level | HEX | RGB |
-|-------|-----|-----|
-| 1 (lightest) | `#f7b2bf` | 247, 178, 191 |
-| 2 | `#f06680` | 240, 102, 128 |
-| 3 | `#a70020` | 167, 0, 32 |
-| 4 (darkest) | `#720016` | 114, 0, 22 |
+| Level | HEX | RGB | CMYK | LESS |
+|-------|-----|-----|------|------|
+| 1 (lightest) | `#f7b2bf` | 247, 178, 191 | 0, 28, 23, 3 | `wewak` |
+| 2 | `#f06680` | 240, 102, 128 | 0, 57, 47, 6 | `froly` |
+| 3 | `#a70020` | 167, 0, 32 | 0, 100, 81, 35 | `carmine` |
+| 4 (darkest) | `#720016` | 114, 0, 22 | 0, 100, 81, 55 | `venetian-red` |
 
 ### Tangerine
 
-| Level | HEX | RGB |
-|-------|-----|-----|
-| 1 (lightest) | `#ffe4c4` | 255, 228, 196 |
-| 2 | `#ffbd61` | 255, 189, 97 |
-| 3 | `#a35700` | 163, 87, 0 |
-| 4 (darkest) | `#7a4100` | 122, 65, 0 |
+| Level | HEX | RGB | CMYK | LESS |
+|-------|-----|-----|------|------|
+| 1 (lightest) | `#ffe4c4` | 255, 228, 196 | 0, 11, 23, 0 | `tequila` |
+| 2 | `#ffbd61` | 255, 189, 97 | 0, 26, 62, 0 | `koromiko` |
+| 3 | `#a35700` | 163, 87, 0 | 0, 47, 100, 36 | `chelsea-gem` |
+| 4 (darkest) | `#7a4100` | 122, 65, 0 | 0, 47, 100, 52 | `cinnamon` |
 
 ### River
 
-| Level | HEX | RGB |
-|-------|-----|-----|
-| 1 (lightest) | `#b7c6e5` | 183, 198, 229 |
-| 2 | `#6e8dcc` | 110, 141, 204 |
-| 3 | `#0b3180` | 11, 49, 128 |
-| 4 (darkest) | `#072155` | 7, 33, 85 |
+| Level | HEX | RGB | CMYK | LESS |
+|-------|-----|-----|------|------|
+| 1 (lightest) | `#b7c6e5` | 183, 198, 229 | 0, 28, 23, 3 | `wewak` |
+| 2 | `#6e8dcc` | 110, 141, 204 | 0, 58, 47, 6 | `froly` |
+| 3 | `#0b3180` | 11, 49, 128 | 0, 100, 81, 35 | `carmine` |
+| 4 (darkest) | `#072155` | 7, 33, 85 | 0, 100, 81, 55 | `venetian-red` |
 
 ### Raspberry
 
-| Level | HEX | RGB |
-|-------|-----|-----|
-| 1 (lightest) | `#e6bed9` | 230, 190, 217 |
-| 2 | `#cd7db4` | 205, 125, 180 |
-| 3 | `#801d62` | 128, 29, 98 |
-| 4 (darkest) | `#561441` | 86, 20, 65 |
+| Level | HEX | RGB | CMYK | LESS |
+|-------|-----|-----|------|------|
+| 1 (lightest) | `#e6bed9` | 230, 190, 217 | 0, 28, 23, 3 | `wewak` |
+| 2 | `#cd7db4` | 205, 125, 180 | 0, 58, 47, 6 | `froly` |
+| 3 | `#801d62` | 128, 29, 98 | 0, 100, 81, 35 | `carmine` |
+| 4 (darkest) | `#561441` | 86, 20, 65 | 0, 100, 81, 55 | `venetian-red` |
 
 ### Jade
 
-| Level | HEX | RGB |
-|-------|-----|-----|
-| 1 (lightest) | `#b2dfc4` | 178, 223, 196 |
-| 2 | `#66c088` | 102, 192, 136 |
-| 3 | `#00712b` | 0, 113, 43 |
-| 4 (darkest) | `#004b1d` | 0, 75, 29 |
+| Level | HEX | RGB | CMYK | LESS |
+|-------|-----|-----|------|------|
+| 1 (lightest) | `#b2dfc4` | 178, 223, 196 | 0, 28, 23, 3 | `wewak` |
+| 2 | `#66c088` | 102, 192, 136 | 0, 58, 47, 6 | `froly` |
+| 3 | `#00712b` | 0, 113, 43 | 0, 100, 81, 35 | `carmine` |
+| 4 (darkest) | `#004b1d` | 0, 75, 29 | 0, 100, 81, 55 | `venetian-red` |
 
 ### Eggplant
 
-| Level | HEX | RGB |
-|-------|-----|-----|
-| 1 (lightest) | `#cdabe3` | 205, 171, 227 |
-| 2 | `#9c59c9` | 156, 89, 201 |
-| 3 | `#822cb8` | 130, 44, 184 |
-| 4 (darkest) | `#41175d` | 65, 23, 93 |
+| Level | HEX | RGB | CMYK | LESS |
+|-------|-----|-----|------|------|
+| 1 (lightest) | `#cdabe3` | 205, 171, 227 | 0, 28, 23, 3 | `wewak` |
+| 2 | `#9c59c9` | 156, 89, 201 | 0, 58, 47, 6 | `froly` |
+| 3 | `#822cb8` | 130, 44, 184 | 0, 100, 81, 35 | `carmine` |
+| 4 (darkest) | `#41175d` | 65, 23, 93 | 0, 100, 81, 55 | `venetian-red` |
 
 ### Bay
 
-| Level | HEX | RGB |
-|-------|-----|-----|
-| 1 (lightest) | `#b2d7eb` | 178, 215, 235 |
-| 2 | `#66afd7` | 102, 175, 215 |
-| 3 | `#005c8d` | 0, 92, 141 |
-| 4 (darkest) | `#003d5f` | 0, 61, 95 |
+| Level | HEX | RGB | CMYK | LESS |
+|-------|-----|-----|------|------|
+| 1 (lightest) | `#b2d7eb` | 178, 215, 235 | 0, 28, 23, 3 | `wewak` |
+| 2 | `#66afd7` | 102, 175, 215 | 0, 58, 47, 6 | `froly` |
+| 3 | `#005c8d` | 0, 92, 141 | 0, 100, 81, 35 | `carmine` |
+| 4 (darkest) | `#003d5f` | 0, 61, 95 | 0, 100, 81, 55 | `venetian-red` |
 
 ### White (Neutrals)
 
-| Level | HEX | RGB |
-|-------|-----|-----|
-| 1 (lightest) | `#faf9f7` | 250, 249, 247 |
-| 2 | `#f5f5f5` | 245, 245, 245 |
-| 3 | `#e6e6e6` | 230, 230, 230 |
-| 4 (darkest) | `#cccccc` | 204, 204, 204 |
+| Level | HEX | RGB | CMYK | LESS |
+|-------|-----|-----|------|------|
+| 1 (lightest) | `#faf9f7` | 250, 249, 247 | 0, 28, 23, 3 | `wewak` |
+| 2 | `#f5f5f5` | 245, 245, 245 | 0, 58, 47, 6 | `froly` |
+| 3 | `#e6e6e6` | 230, 230, 230 | 0, 100, 81, 35 | `carmine` |
+| 4 (darkest) | `#cccccc` | 204, 204, 204 | 0, 100, 81, 55 | `venetian-red` |
 
 ### Black (Grays)
 
-| Level | HEX | RGB |
-|-------|-----|-----|
-| 1 (lightest) | `#999999` | 153, 153, 153 |
-| 2 | `#666666` | 102, 102, 102 |
-| 3 | `#343434` | 52, 52, 52 |
-| 4 (darkest) | `#222222` | 34, 34, 34 |
+| Level | HEX | RGB | CMYK | LESS |
+|-------|-----|-----|------|------|
+| 1 (lightest) | `#999999` | 153, 153, 153 | 0, 28, 23, 3 | `wewak` |
+| 2 | `#666666` | 102, 102, 102 | 0, 58, 47, 6 | `froly` |
+| 3 | `#343434` | 52, 52, 52 | 0, 100, 81, 35 | `carmine` |
+| 4 (darkest) | `#222222` | 34, 34, 34 | 0, 100, 81, 55 | `venetian-red` |
 
 ## Mapping to Starlight CSS Custom Properties
 
-Starlight exposes `--sl-color-*` variables for theming. Below is a recommended mapping from the F5 palette to Starlight's semantic color slots.
+Starlight exposes `--sl-color-*` variables for theming. Below is the mapping from the F5 palette to Starlight's semantic color slots, implemented in `styles/custom.css`.
+
+> **How Starlight theming works**: In Starlight, **dark mode is the bare `:root` default** — there is no `data-theme="dark"` selector. Light mode uses `:root[data-theme='light']`. The gray scale variables are *semantic*, not brightness-ordered: `gray-1` is always "primary text" and `gray-6`/`gray-7` are always "subtle backgrounds," regardless of mode. Their actual brightness values swap between modes. Similarly, `accent-high` is always the high-visibility accent text color and `accent-low` is always the subtle accent background — their brightness inverts between modes.
 
 ```css
-/* F5 brand color tokens */
+/* Dark mode — Starlight default (:root) */
 :root {
-  --f5-red: #e4002b;
-  --f5-tangerine: #f29a36;
-  --f5-river: #0e41aa;
-  --f5-raspberry: #ab2782;
-  --f5-jade: #009639;
-  --f5-eggplant: #62228b;
-  --f5-bay: #0072b0;
+  --sl-color-white: #ffffff;      /* Heading text (brightest) */
+  --sl-color-gray-1: #f5f5f5;    /* Primary text — White Level 2 */
+  --sl-color-gray-2: #cccccc;    /* Body text — White Level 4 */
+  --sl-color-gray-3: #999999;    /* Dim/muted text — Black Level 1 */
+  --sl-color-gray-4: #666666;    /* Borders — Black Level 2 */
+  --sl-color-gray-5: #343434;    /* Inline code bg — Black Level 3 */
+  --sl-color-gray-6: #222222;    /* Sidebar bg — Black Level 4 */
+  --sl-color-black: #000000;     /* Page background */
+  --sl-color-accent-low: #720016;   /* Subtle accent bg — F5 Red Level 4 */
+  --sl-color-accent: #f06680;       /* Links, active — F5 Red Level 2 */
+  --sl-color-accent-high: #f7b2bf;  /* Accent text — F5 Red Level 1 */
 }
 
-/* Starlight accent — uses F5 Red as the primary accent */
-:root {
-  --sl-color-accent-low: #720016;
-  --sl-color-accent: #e4002b;
-  --sl-color-accent-high: #f7b2bf;
-}
-
-/* Starlight gray scale — maps to Black/White neutrals */
-:root {
-  --sl-color-gray-1: #faf9f7;
-  --sl-color-gray-2: #f5f5f5;
-  --sl-color-gray-3: #e6e6e6;
-  --sl-color-gray-4: #cccccc;
-  --sl-color-gray-5: #999999;
-  --sl-color-gray-6: #343434;
-  --sl-color-gray-7: #222222;
-}
-
-/* Dark mode overrides */
-:root[data-theme="dark"] {
-  --sl-color-accent-low: #720016;
-  --sl-color-accent: #f06680;
-  --sl-color-accent-high: #f7b2bf;
-
-  --sl-color-gray-1: #222222;
-  --sl-color-gray-2: #343434;
-  --sl-color-gray-3: #666666;
-  --sl-color-gray-4: #999999;
-  --sl-color-gray-5: #cccccc;
-  --sl-color-gray-6: #f5f5f5;
-  --sl-color-gray-7: #faf9f7;
+/* Light mode — inverted gray scale and accent brightness */
+:root[data-theme='light'] {
+  --sl-color-white: #222222;      /* Heading text (darkest) — Black Level 4 */
+  --sl-color-gray-1: #222222;    /* Primary text — Black Level 4 */
+  --sl-color-gray-2: #343434;    /* Body text — Black Level 3 */
+  --sl-color-gray-3: #666666;    /* Dim text — Black Level 2 */
+  --sl-color-gray-4: #999999;    /* Borders — Black Level 1 */
+  --sl-color-gray-5: #cccccc;    /* Light borders — White Level 4 */
+  --sl-color-gray-6: #f5f5f5;    /* Sidebar bg — White Level 2 */
+  --sl-color-gray-7: #faf9f7;    /* Nav bg — White Level 1 */
+  --sl-color-black: #ffffff;     /* Page background */
+  --sl-color-accent-low: #f7b2bf;   /* Subtle accent bg — F5 Red Level 1 (inverted) */
+  --sl-color-accent: #e4002b;       /* Links, active — F5 Red */
+  --sl-color-accent-high: #720016;  /* Accent text — F5 Red Level 4 (inverted) */
 }
 ```
+
+### Contrast verification (WCAG AA)
+
+**Dark mode** (text on `#000000` page background):
+- Body text `#cccccc` → **16.3:1** (AAA)
+- Dim text `#999999` → **10:1** (AAA)
+- Accent link `#f06680` → **5.6:1** (AA)
+
+**Light mode** (text on `#ffffff` page background):
+- Body text `#343434` → **11.6:1** (AAA)
+- Dim text `#666666` → **5.7:1** (AA)
+- Accent link `#e4002b` → **4.6:1** (AA)
 
 ### Semantic color suggestions
 
@@ -170,7 +179,9 @@ Starlight exposes `--sl-color-*` variables for theming. Below is a recommended m
 | Custom: `--sl-color-warning` | Tangerine `#f29a36` | Warning callouts |
 | Custom: `--sl-color-danger` | F5 Red `#e4002b` | Error/danger callouts |
 
-## Accessibility
+## Color Contrast
+
+To ensure everyone can access and understand our communications, use background and text color combinations that meet accessibility standards. Select color pairs with a minimum contrast ratio of 3:1 for large text and 4.5:1 for regular text.
 
 All color pairings must meet **WCAG AA** contrast requirements:
 
@@ -207,3 +218,11 @@ All color pairings must meet **WCAG AA** contrast requirements:
 | **Eggplant** | Accent, premium | Feature highlights, premium indicators, decorative accents |
 | **White / Neutrals** | Backgrounds, surfaces | Page backgrounds, card surfaces, dividers, subtle borders |
 | **Black / Grays** | Text, structure | Body text, headings, borders, shadow layers |
+
+## Downloadable Assets
+
+Official color swatch files are available from the [F5 Brand Center](https://brand.f5.com/d/yYzHXTsZ4EGq/elements#/-/colors) in the following formats:
+
+- **ASE** — Adobe Swatch Exchange (for Photoshop, Illustrator, InDesign)
+- **LESS** — LESS variable definitions
+- **SCSS** — Sass variable definitions

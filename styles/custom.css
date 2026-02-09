@@ -1,11 +1,106 @@
+/* ===== F5 Brand Color Tokens ===== */
 :root {
-  --sl-font: "proximaNova", -apple-system, "system-ui", "Segoe UI", Helvetica, Arial, sans-serif;
+  --f5-red: #e4002b;
+  --f5-red-1: #f7b2bf;
+  --f5-red-2: #f06680;
+  --f5-red-3: #a70020;
+  --f5-red-4: #720016;
+  --f5-tangerine: #f29a36;
+  --f5-tangerine-1: #ffe4c4;
+  --f5-tangerine-2: #ffbd61;
+  --f5-tangerine-3: #a35700;
+  --f5-tangerine-4: #7a4100;
+  --f5-river: #0e41aa;
+  --f5-river-1: #b7c6e5;
+  --f5-river-2: #6e8dcc;
+  --f5-river-3: #0b3180;
+  --f5-river-4: #072155;
+  --f5-raspberry: #ab2782;
+  --f5-raspberry-1: #e6bed9;
+  --f5-raspberry-2: #cd7db4;
+  --f5-raspberry-3: #801d62;
+  --f5-raspberry-4: #561441;
+  --f5-jade: #009639;
+  --f5-jade-1: #b2dfc4;
+  --f5-jade-2: #66c088;
+  --f5-jade-3: #00712b;
+  --f5-jade-4: #004b1d;
+  --f5-eggplant: #62228b;
+  --f5-eggplant-1: #cdabe3;
+  --f5-eggplant-2: #9c59c9;
+  --f5-eggplant-3: #822cb8;
+  --f5-eggplant-4: #41175d;
+  --f5-bay: #0072b0;
+  --f5-bay-1: #b2d7eb;
+  --f5-bay-2: #66afd7;
+  --f5-bay-3: #005c8d;
+  --f5-bay-4: #003d5f;
+  --f5-white: #ffffff;
+  --f5-white-1: #faf9f7;
+  --f5-white-2: #f5f5f5;
+  --f5-white-3: #e6e6e6;
+  --f5-white-4: #cccccc;
+  --f5-black: #000000;
+  --f5-black-1: #999999;
+  --f5-black-2: #666666;
+  --f5-black-3: #343434;
+  --f5-black-4: #222222;
+}
+
+/* ===== Dark Mode (Starlight default) ===== */
+:root {
+  --sl-color-white: var(--f5-white);
+  --sl-color-gray-1: var(--f5-white-2);
+  --sl-color-gray-2: var(--f5-white-4);
+  --sl-color-gray-3: var(--f5-black-1);
+  --sl-color-gray-4: var(--f5-black-2);
+  --sl-color-gray-5: var(--f5-black-3);
+  --sl-color-gray-6: var(--f5-black-4);
+  --sl-color-black: var(--f5-black);
+  --sl-color-accent-low: var(--f5-red-4);
+  --sl-color-accent: var(--f5-red-2);
+  --sl-color-accent-high: var(--f5-red-1);
+
+  --sl-color-bg-badge-default: var(--f5-bay-4);
+  --sl-color-bg-badge-note: var(--f5-bay-4);
+  --sl-color-bg-badge-danger: var(--f5-red-4);
+  --sl-color-bg-badge-success: var(--f5-jade-4);
+  --sl-color-bg-badge-caution: var(--f5-tangerine-4);
+  --sl-color-bg-badge-tip: var(--f5-eggplant-4);
+}
+
+/* ===== Light Mode ===== */
+:root[data-theme='light'] {
+  --sl-color-white: var(--f5-black-4);
+  --sl-color-gray-1: var(--f5-black-4);
+  --sl-color-gray-2: var(--f5-black-3);
+  --sl-color-gray-3: var(--f5-black-2);
+  --sl-color-gray-4: var(--f5-black-1);
+  --sl-color-gray-5: var(--f5-white-4);
+  --sl-color-gray-6: var(--f5-white-2);
+  --sl-color-gray-7: var(--f5-white-1);
+  --sl-color-black: var(--f5-white);
+  --sl-color-accent-low: var(--f5-red-1);
+  --sl-color-accent: var(--f5-red);
+  --sl-color-accent-high: var(--f5-red-4);
+
+  --sl-color-bg-badge-default: var(--f5-bay-1);
+  --sl-color-bg-badge-note: var(--f5-bay-1);
+  --sl-color-bg-badge-danger: var(--f5-red-1);
+  --sl-color-bg-badge-success: var(--f5-jade-1);
+  --sl-color-bg-badge-caution: var(--f5-tangerine-1);
+  --sl-color-bg-badge-tip: var(--f5-eggplant-1);
+}
+
+/* ===== Fonts & Layout ===== */
+:root {
+  --sl-font: "proximaNova", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
   --sl-content-width: 60rem;
   --sl-sidebar-width: 15rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "neusaNextProWide", -apple-system, "system-ui", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: "neusaNextProWide", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 @media (min-width: 72rem) {
@@ -32,6 +127,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0.5rem;
 }
 
+/* fill is a valid SVG presentation property (CSS Masking/SVG spec) */
 .mermaid-container svg rect,
 .mermaid-container svg polygon {
   fill: white !important;
