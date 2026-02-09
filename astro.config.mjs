@@ -20,6 +20,9 @@ export default defineConfig({
           projectName: process.env.DOCS_TITLE || 'Documentation',
           description: process.env.DOCS_DESCRIPTION || '',
           rawContent: true,
+          optionalLinks: process.env.LLMS_OPTIONAL_LINKS
+            ? JSON.parse(process.env.LLMS_OPTIONAL_LINKS)
+            : [],
         }),
       ],
       logo: {
