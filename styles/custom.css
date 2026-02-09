@@ -96,4 +96,34 @@ h1, h2, h3, h4, h5, h6 {
   background: #1a1b26 !important;
 }
 
+/* Breadcrumb navigation */
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--sl-color-gray-3);
+}
+
+.breadcrumbs li + li::before {
+  content: '/';
+  padding-inline: 0.375rem;
+  color: var(--sl-color-gray-5);
+}
+
+.breadcrumbs a {
+  color: var(--sl-color-text-accent);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs [aria-current="page"] {
+  color: var(--sl-color-white);
+}
+
 /* release pipeline verified */

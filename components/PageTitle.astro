@@ -1,0 +1,32 @@
+---
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+
+const docsHome = process.env.DOCS_HOME || 'https://robinmordasiewicz.github.io/f5xc-docs/';
+const { sidebar, entry } = Astro.locals.starlightRoute;
+
+function findTrail(entries: typeof sidebar, trail: { label: string }[] = []): { label: string }[] | null {
+  for (const item of entries) {
+    if (item.type === 'link' && item.isCurrent) {
+      return trail;
+    }
+    if (item.type === 'group') {
+      const result = findTrail(item.entries, [...trail, { label: item.label }]);
+      if (result) return result;
+    }
+  }
+  return null;
+}
+
+const trail = findTrail(sidebar) || [];
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href={docsHome}>Home</a></li>
+    {trail.map((crumb) => (
+      <li><span>{crumb.label}</span></li>
+    ))}
+    <li aria-current="page"><span>{entry.data.title}</span></li>
+  </ol>
+</nav>
+<Default {...Astro.props}><slot /></Default>
