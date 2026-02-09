@@ -19,6 +19,7 @@ export default defineConfig({
         starlightLlmsTxt({
           projectName: process.env.DOCS_TITLE || 'Documentation',
           description: process.env.DOCS_DESCRIPTION || '',
+          rawContent: true,
         }),
       ],
       logo: {
