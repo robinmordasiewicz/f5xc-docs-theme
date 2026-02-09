@@ -1,11 +1,11 @@
 ---
 title: Environment Variables
-description: Reference for all environment variables supported by the theme's astro.config.mjs.
+description: Reference for all environment variables supported by the theme.
 sidebar:
   order: 6
 ---
 
-The `astro.config.mjs` reads four environment variables at build time. Content repositories set these in their GitHub Actions workflow to customize each site without forking the theme.
+The theme reads environment variables at build time from `astro.config.mjs` and custom components. Content repositories set these in their GitHub Actions workflow to customize each site without forking the theme.
 
 ## Variable Reference
 
@@ -14,6 +14,7 @@ The `astro.config.mjs` reads four environment variables at build time. Content r
 | `DOCS_TITLE` | `Documentation` | Site title shown in the header and browser tab |
 | `DOCS_SITE` | `https://robinmordasiewicz.github.io` | Canonical base URL for the deployed site |
 | `DOCS_BASE` | `/` | URL base path (e.g., `/my-repo/` for project sites) |
+| `DOCS_HOME` | `https://robinmordasiewicz.github.io/f5xc-docs/` | Home page URL linked from the site title |
 | `GITHUB_REPOSITORY` | _(empty string)_ | Used to build the GitHub social link in the header |
 
 ## Where Each Variable Is Used
@@ -42,6 +43,14 @@ const base = process.env.DOCS_BASE || '/';
 
 Sets Astro's top-level `base` property. Required when deploying to a subdirectory (e.g., `https://example.github.io/my-repo/`).
 
+### DOCS_HOME
+
+```js
+const docsHome = process.env.DOCS_HOME || 'https://robinmordasiewicz.github.io/f5xc-docs/';
+```
+
+Read by the custom `SiteTitle.astro` component. Wraps the site title in the header with a link to this URL, allowing users to navigate back to a central documentation home page. Useful when multiple content repositories share the same theme and you want a consistent "home" link across all sites.
+
 ### GITHUB_REPOSITORY
 
 ```js
@@ -66,6 +75,7 @@ jobs:
       docs_title: "My Project Docs"
       docs_site: "https://example.github.io"
       docs_base: "/my-project/"
+      docs_home: "https://example.github.io/home/"
 ```
 
 The `GITHUB_REPOSITORY` variable is provided automatically by the GitHub Actions runner and does not need to be set manually.
