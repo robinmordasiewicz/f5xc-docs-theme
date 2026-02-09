@@ -246,4 +246,50 @@ h4, h5, h6 {
   color: var(--sl-color-white);
 }
 
+/* ===== Color Swatch Styles ===== */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+
+.swatch {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.08),
+    0 24px 48px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--sl-color-gray-5);
+}
+
+.swatch-color {
+  height: 5rem;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--sl-font);
+}
+
+.swatch-color.text-light { color: #ffffff; }
+.swatch-color.text-dark { color: #000000; }
+
+.swatch-label {
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  line-height: 1.4;
+  font-family: var(--sl-font);
+  background: var(--sl-color-gray-6);
+  color: var(--sl-color-gray-1);
+}
+
+.swatch-label code {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--sl-color-gray-3);
+}
+
 /* release pipeline verified */
