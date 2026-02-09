@@ -48,7 +48,25 @@ jobs:
           @semantic-release/github
 
       - name: Run semantic-release
-        run: npx semantic-release
+        run: |
+          max_attempts=3
+          attempt=1
+          delay=10
+          while [ $attempt -le $max_attempts ]; do
+            echo "Attempt $attempt of $max_attempts"
+            if npx semantic-release; then
+              echo "semantic-release succeeded"
+              exit 0
+            fi
+            if [ $attempt -eq $max_attempts ]; then
+              echo "semantic-release failed after $max_attempts attempts"
+              exit 1
+            fi
+            echo "Retrying in ${delay}s..."
+            sleep $delay
+            delay=$((delay * 2))
+            attempt=$((attempt + 1))
+          done
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_ADMIN_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
