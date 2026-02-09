@@ -4,6 +4,7 @@ import react from '@astrojs/react';
 import f5xcDocsTheme from 'f5xc-docs-theme';
 import remarkMermaid from './src/plugins/remark-mermaid.mjs';
 import starlightScrollToTop from 'starlight-scroll-to-top';
+import starlightImageZoom from 'starlight-image-zoom';
 import starlightLlmsTxt from 'starlight-llms-txt';
 
 export default defineConfig({
@@ -26,6 +27,7 @@ export default defineConfig({
           progressRingColor: '#e4002b',
           showOnHomepage: false,
         }),
+        starlightImageZoom(),
         starlightLlmsTxt({
           projectName: process.env.DOCS_TITLE || 'Documentation',
           description: process.env.DOCS_DESCRIPTION || '',
