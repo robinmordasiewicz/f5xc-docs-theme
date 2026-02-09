@@ -1,0 +1,209 @@
+---
+title: Color Style Guide
+description: F5 brand color palette reference for theme development — primary colors, tints, shades, and Starlight CSS custom property mapping.
+sidebar:
+  order: 3
+---
+
+F5's color system uses seven primary brand colors plus black and white, each with four tint/shade variants for a total of **45 colors**. This page is the single source of truth for mapping F5 brand colors to Starlight CSS custom properties during theme development.
+
+Source: [F5 Brand Center — Colors](https://brand.f5.com/d/yYzHXTsZ4EGq/elements#/-/colors)
+
+## Primary Colors
+
+| Name | HEX | RGB | PMS | CSS Variable |
+|------|-----|-----|-----|--------------|
+| F5 Red | `#e4002b` | 228, 0, 43 | 185 | `--f5-red` |
+| Tangerine | `#f29a36` | 242, 154, 54 | 1375 | `--f5-tangerine` |
+| River | `#0e41aa` | 14, 65, 170 | 293 | `--f5-river` |
+| Raspberry | `#ab2782` | 171, 39, 130 | 241 | `--f5-raspberry` |
+| Jade | `#009639` | 0, 150, 57 | 355 | `--f5-jade` |
+| Eggplant | `#62228b` | 98, 34, 139 | 2617 | `--f5-eggplant` |
+| Bay | `#0072b0` | 0, 114, 176 | 7461 | `--f5-bay` |
+| White | `#ffffff` | 255, 255, 255 | — | `--f5-white` |
+| Black | `#000000` | 0, 0, 0 | Black | `--f5-black` |
+
+## Secondary Colors (Tints & Shades)
+
+Each primary color has four variants ordered from lightest (Level 1) to darkest (Level 4).
+
+### F5 Red
+
+| Level | HEX | RGB |
+|-------|-----|-----|
+| 1 (lightest) | `#f7b2bf` | 247, 178, 191 |
+| 2 | `#f06680` | 240, 102, 128 |
+| 3 | `#a70020` | 167, 0, 32 |
+| 4 (darkest) | `#720016` | 114, 0, 22 |
+
+### Tangerine
+
+| Level | HEX | RGB |
+|-------|-----|-----|
+| 1 (lightest) | `#ffe4c4` | 255, 228, 196 |
+| 2 | `#ffbd61` | 255, 189, 97 |
+| 3 | `#a35700` | 163, 87, 0 |
+| 4 (darkest) | `#7a4100` | 122, 65, 0 |
+
+### River
+
+| Level | HEX | RGB |
+|-------|-----|-----|
+| 1 (lightest) | `#b7c6e5` | 183, 198, 229 |
+| 2 | `#6e8dcc` | 110, 141, 204 |
+| 3 | `#0b3180` | 11, 49, 128 |
+| 4 (darkest) | `#072155` | 7, 33, 85 |
+
+### Raspberry
+
+| Level | HEX | RGB |
+|-------|-----|-----|
+| 1 (lightest) | `#e6bed9` | 230, 190, 217 |
+| 2 | `#cd7db4` | 205, 125, 180 |
+| 3 | `#801d62` | 128, 29, 98 |
+| 4 (darkest) | `#561441` | 86, 20, 65 |
+
+### Jade
+
+| Level | HEX | RGB |
+|-------|-----|-----|
+| 1 (lightest) | `#b2dfc4` | 178, 223, 196 |
+| 2 | `#66c088` | 102, 192, 136 |
+| 3 | `#00712b` | 0, 113, 43 |
+| 4 (darkest) | `#004b1d` | 0, 75, 29 |
+
+### Eggplant
+
+| Level | HEX | RGB |
+|-------|-----|-----|
+| 1 (lightest) | `#cdabe3` | 205, 171, 227 |
+| 2 | `#9c59c9` | 156, 89, 201 |
+| 3 | `#822cb8` | 130, 44, 184 |
+| 4 (darkest) | `#41175d` | 65, 23, 93 |
+
+### Bay
+
+| Level | HEX | RGB |
+|-------|-----|-----|
+| 1 (lightest) | `#b2d7eb` | 178, 215, 235 |
+| 2 | `#66afd7` | 102, 175, 215 |
+| 3 | `#005c8d` | 0, 92, 141 |
+| 4 (darkest) | `#003d5f` | 0, 61, 95 |
+
+### White (Neutrals)
+
+| Level | HEX | RGB |
+|-------|-----|-----|
+| 1 (lightest) | `#faf9f7` | 250, 249, 247 |
+| 2 | `#f5f5f5` | 245, 245, 245 |
+| 3 | `#e6e6e6` | 230, 230, 230 |
+| 4 (darkest) | `#cccccc` | 204, 204, 204 |
+
+### Black (Grays)
+
+| Level | HEX | RGB |
+|-------|-----|-----|
+| 1 (lightest) | `#999999` | 153, 153, 153 |
+| 2 | `#666666` | 102, 102, 102 |
+| 3 | `#343434` | 52, 52, 52 |
+| 4 (darkest) | `#222222` | 34, 34, 34 |
+
+## Mapping to Starlight CSS Custom Properties
+
+Starlight exposes `--sl-color-*` variables for theming. Below is a recommended mapping from the F5 palette to Starlight's semantic color slots.
+
+```css
+/* F5 brand color tokens */
+:root {
+  --f5-red: #e4002b;
+  --f5-tangerine: #f29a36;
+  --f5-river: #0e41aa;
+  --f5-raspberry: #ab2782;
+  --f5-jade: #009639;
+  --f5-eggplant: #62228b;
+  --f5-bay: #0072b0;
+}
+
+/* Starlight accent — uses F5 Red as the primary accent */
+:root {
+  --sl-color-accent-low: #720016;
+  --sl-color-accent: #e4002b;
+  --sl-color-accent-high: #f7b2bf;
+}
+
+/* Starlight gray scale — maps to Black/White neutrals */
+:root {
+  --sl-color-gray-1: #faf9f7;
+  --sl-color-gray-2: #f5f5f5;
+  --sl-color-gray-3: #e6e6e6;
+  --sl-color-gray-4: #cccccc;
+  --sl-color-gray-5: #999999;
+  --sl-color-gray-6: #343434;
+  --sl-color-gray-7: #222222;
+}
+
+/* Dark mode overrides */
+:root[data-theme="dark"] {
+  --sl-color-accent-low: #720016;
+  --sl-color-accent: #f06680;
+  --sl-color-accent-high: #f7b2bf;
+
+  --sl-color-gray-1: #222222;
+  --sl-color-gray-2: #343434;
+  --sl-color-gray-3: #666666;
+  --sl-color-gray-4: #999999;
+  --sl-color-gray-5: #cccccc;
+  --sl-color-gray-6: #f5f5f5;
+  --sl-color-gray-7: #faf9f7;
+}
+```
+
+### Semantic color suggestions
+
+| Starlight Variable | F5 Color | Use Case |
+|--------------------|----------|----------|
+| `--sl-color-accent` | F5 Red `#e4002b` | Links, buttons, active states |
+| `--sl-color-text-accent` | F5 Red Level 2 `#f06680` | Hover states in dark mode |
+| `--sl-color-bg-accent` | F5 Red Level 4 `#720016` | Accent backgrounds |
+| Custom: `--sl-color-info` | Bay `#0072b0` | Informational callouts |
+| Custom: `--sl-color-success` | Jade `#009639` | Success messages |
+| Custom: `--sl-color-warning` | Tangerine `#f29a36` | Warning callouts |
+| Custom: `--sl-color-danger` | F5 Red `#e4002b` | Error/danger callouts |
+
+## Accessibility
+
+All color pairings must meet **WCAG AA** contrast requirements:
+
+- **Regular text** (< 18pt / 14pt bold): minimum **4.5:1** contrast ratio
+- **Large text** (≥ 18pt / 14pt bold): minimum **3:1** contrast ratio
+- **UI components and graphical objects**: minimum **3:1** contrast ratio
+
+### Recommended safe pairings
+
+| Foreground | Background | Contrast Ratio | Passes |
+|------------|------------|----------------|--------|
+| White `#ffffff` | F5 Red `#e4002b` | 4.6:1 | AA |
+| White `#ffffff` | River `#0e41aa` | 6.4:1 | AA / AAA |
+| White `#ffffff` | Bay `#0072b0` | 4.6:1 | AA |
+| White `#ffffff` | Jade `#009639` | 4.2:1 | AA (large text) |
+| White `#ffffff` | Eggplant `#62228b` | 6.5:1 | AA / AAA |
+| White `#ffffff` | Raspberry `#ab2782` | 4.7:1 | AA |
+| Black `#000000` | Tangerine `#f29a36` | 7.8:1 | AA / AAA |
+| Black `#000000` | F5 Red Level 1 `#f7b2bf` | 10.1:1 | AA / AAA |
+| Black `#222222` | White Level 1 `#faf9f7` | 15.8:1 | AA / AAA |
+
+> **Tip**: Always verify contrast ratios with a tool like [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) when creating new color combinations.
+
+## Usage Guidelines
+
+| Color Family | Role | When to Use |
+|--------------|------|-------------|
+| **F5 Red** | Brand identity, primary CTAs | Hero sections, primary buttons, brand marks, error states |
+| **River** | Informational, trust | Navigation links, informational banners, data visualizations |
+| **Bay** | Informational, secondary | Secondary links, info callouts, code block accents |
+| **Jade** | Success, positive | Success messages, confirmation states, progress indicators |
+| **Tangerine** | Warning, attention | Warning callouts, attention-needed states, highlight markers |
+| **Raspberry** | Accent, decorative | Tags, badges, secondary accents, category markers |
+| **Eggplant** | Accent, premium | Feature highlights, premium indicators, decorative accents |
+| **White / Neutrals** | Backgrounds, surfaces | Page backgrounds, card surfaces, dividers, subtle borders |
+| **Black / Grays** | Text, structure | Body text, headings, borders, shadow layers |
