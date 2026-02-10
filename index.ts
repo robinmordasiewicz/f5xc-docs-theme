@@ -18,6 +18,7 @@ export default function f5xcDocsTheme(): StarlightPlugin {
           components: {
             ...config.components,
             Banner: 'f5xc-docs-theme/components/Banner.astro',
+            EditLink: 'f5xc-docs-theme/components/EditLink.astro',
             Footer: 'f5xc-docs-theme/components/Footer.astro',
             SiteTitle: 'f5xc-docs-theme/components/SiteTitle.astro',
             MarkdownContent: 'f5xc-docs-theme/components/MarkdownContent.astro',
