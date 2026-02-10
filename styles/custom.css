@@ -354,12 +354,7 @@ h4, h5, h6 {
 }
 
 .icon-card-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
   background: var(--sl-color-gray-7, #faf9f7);
-  aspect-ratio: 1;
 }
 
 :root:not([data-theme='light']) .icon-card-image {
@@ -367,9 +362,9 @@ h4, h5, h6 {
 }
 
 .icon-card-image img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
 }
 
 /* Invert near-black SVGs for dark mode visibility */
