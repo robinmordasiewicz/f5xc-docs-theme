@@ -1,5 +1,5 @@
 {
-  "name": "@robinmordasiewicz/f5xc-docs-theme",
+  "name": "f5xc-docs-theme",
   "version": "0.1.0",
   "description": "F5 Distributed Cloud branded Starlight documentation theme",
   "type": "module",
@@ -21,10 +21,12 @@
     "./components/SiteTitle.astro": "./components/SiteTitle.astro",
     "./components/MarkdownContent.astro": "./components/MarkdownContent.astro",
     "./assets/f5-logo.svg": "./assets/f5-logo.svg",
-    "./assets/github-avatar.png": "./assets/github-avatar.png"
+    "./assets/github-avatar.png": "./assets/github-avatar.png",
+    "./route-middleware": "./route-middleware.ts"
   },
   "files": [
     "index.ts",
+    "route-middleware.ts",
     "astro.config.mjs",
     "fonts/",
     "styles/",
