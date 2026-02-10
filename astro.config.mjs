@@ -21,6 +21,8 @@ export default defineConfig({
     starlight({
       title: process.env.DOCS_TITLE || 'Documentation',
       plugins: [
+        starlightVideosPlugin(),
+        starlightImageZoom(),
         f5xcDocsTheme(),
         starlightScrollToTop({
           showTooltip: true,
@@ -31,9 +33,7 @@ export default defineConfig({
           progressRingColor: '#e4002b',
           showOnHomepage: false,
         }),
-        starlightImageZoom(),
         starlightHeadingBadges(),
-        starlightVideosPlugin(),
         starlightPageActions(),
         starlightIconsPlugin(),
         starlightLlmsTxt({

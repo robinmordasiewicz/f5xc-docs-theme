@@ -19,6 +19,7 @@
     "./components/Banner.astro": "./components/Banner.astro",
     "./components/Footer.astro": "./components/Footer.astro",
     "./components/SiteTitle.astro": "./components/SiteTitle.astro",
+    "./components/MarkdownContent.astro": "./components/MarkdownContent.astro",
     "./assets/f5-logo.svg": "./assets/f5-logo.svg",
     "./assets/github-avatar.png": "./assets/github-avatar.png"
   },
