@@ -351,9 +351,11 @@ h4, h5, h6 {
     0 24px 48px rgba(0, 0, 0, 0.12);
   border: 1px solid var(--sl-color-gray-5);
   text-align: center;
+  margin: 0;
 }
 
 .icon-card-image {
+  padding: 0;
   background: var(--sl-color-gray-7, #faf9f7);
 }
 
@@ -373,6 +375,7 @@ h4, h5, h6 {
 }
 
 .icon-card-label {
+  margin: 0;
   padding: 0.375rem 0.5rem;
   font-size: 0.65rem;
   line-height: 1.3;
