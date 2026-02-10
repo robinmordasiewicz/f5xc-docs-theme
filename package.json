@@ -17,6 +17,7 @@
     "./fonts/font-face.css": "./fonts/font-face.css",
     "./styles/custom.css": "./styles/custom.css",
     "./components/Banner.astro": "./components/Banner.astro",
+    "./components/EditLink.astro": "./components/EditLink.astro",
     "./components/Footer.astro": "./components/Footer.astro",
     "./components/SiteTitle.astro": "./components/SiteTitle.astro",
     "./components/MarkdownContent.astro": "./components/MarkdownContent.astro",
