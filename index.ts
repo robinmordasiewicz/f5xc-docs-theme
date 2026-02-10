@@ -4,10 +4,14 @@ export default function f5xcDocsTheme(): StarlightPlugin {
   return {
     name: 'f5xc-docs-theme',
     hooks: {
-      'config:setup'({ config, updateConfig, logger }) {
+      'config:setup'({ config, updateConfig, addRouteMiddleware, logger }) {
+        addRouteMiddleware({
+          entrypoint: 'f5xc-docs-theme/route-middleware',
+          order: 'pre',
+        });
         updateConfig({
           customCss: [
-            ...config.customCss,
+            ...(config.customCss ?? []),
             'f5xc-docs-theme/fonts/font-face.css',
             'f5xc-docs-theme/styles/custom.css',
           ],
