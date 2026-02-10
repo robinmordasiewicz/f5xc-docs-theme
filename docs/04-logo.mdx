@@ -2,17 +2,16 @@
 title: Logo
 description: How the logo is configured and how to replace it.
 sidebar:
-  order: 3
+  order: 4
 ---
 
 The theme displays the logo in the sidebar of every documentation site.
 
 ## Current Logo
 
-- **File**: `assets/f5-logo.svg`
+- **File**: `assets/logo.svg`
 - **Format**: SVG with `viewBox="0 0 1000 1000"`
-- **Primary color**: F5 Red (`#e4002b`)
-- **Content**: F5 globe mark with the "F5" wordmark and registered trademark symbol
+- **Primary color**: Cloud Red (`#e4002b`)
 
 ## How It's Referenced
 
@@ -21,7 +20,7 @@ In `astro.config.mjs`, the logo is passed to the Starlight `logo` option:
 ```js
 starlight({
   logo: {
-    src: './theme/assets/f5-logo.svg',
+    src: './theme/assets/logo.svg',
   },
 })
 ```

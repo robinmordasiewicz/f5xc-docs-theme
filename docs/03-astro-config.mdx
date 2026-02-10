@@ -2,7 +2,7 @@
 title: Astro Configuration
 description: Line-by-line reference for astro.config.mjs.
 sidebar:
-  order: 5
+  order: 3
 ---
 
 The `astro.config.mjs` file is the shared Astro/Starlight configuration used by every documentation site built with this theme. It is read by the builder at build time.
@@ -33,7 +33,7 @@ export default defineConfig({
         './theme/styles/custom.css',
       ],
       logo: {
-        src: './theme/assets/f5-logo.svg',
+        src: './theme/assets/logo.svg',
       },
       components: {
         Footer: './theme/components/Footer.astro',
@@ -104,11 +104,11 @@ Loads the font declarations first, then the custom styles. Order matters — `cu
 
 ```js
 logo: {
-  src: './theme/assets/f5-logo.svg',
+  src: './theme/assets/logo.svg',
 },
 ```
 
-Displays the F5 logo in the sidebar. The `./theme/` prefix is required because the builder places this theme repository in a `theme/` directory.
+Displays the logo in the sidebar. The `./theme/` prefix is required because the builder places this theme repository in a `theme/` directory.
 
 #### Footer Component Override
 
@@ -118,7 +118,7 @@ components: {
 },
 ```
 
-Replaces the default Starlight footer with the custom footer that includes F5 social media links.
+Replaces the default Starlight footer with the custom footer that includes social media links.
 
 #### Social Links
 
