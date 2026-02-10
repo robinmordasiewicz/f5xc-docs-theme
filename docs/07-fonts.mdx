@@ -1,15 +1,15 @@
 ---
-title: Fonts & Typography
+title: Fonts
 description: Font families, type hierarchy, weight usage, leading specs, case conventions, and Starlight theme mapping.
 sidebar:
-  order: 1
+  order: 7
 ---
 
 The type system blends two font families inspired by Swiss design, establishing a clear hierarchy between expressive headlines and functional body copy.
 
 ## Design Philosophy
 
-F5 typography uses proportion, rhythm, and tempo — achieved through type style, scale, weight, color, leading, horizontal space, and vertical space — to create clear visual hierarchy.
+Fonts typography uses proportion, rhythm, and tempo — achieved through type style, scale, weight, color, leading, horizontal space, and vertical space — to create clear visual hierarchy.
 
 - **Neusa Next Wide** is inspired by type treatments from early space exploration, adding a human and expressive character to headlines and subheads
 - **Proxima Nova** brings openness and geometric styling to harder-working moments such as body and utility copy
@@ -31,8 +31,6 @@ The Brand Center specimen shows five styles:
 | Italic | 400 | `400` | `italic` |
 | Medium | 500 | `500` | `normal` |
 | Bold | 700 | `700` | `normal` |
-
-The downloadable font package from the Brand Center (`Neusa-Next-Pro-F5-Inhouse-Type.zip`) also includes **Bold Italic** (700 italic), for a total of six OTF source files. This is an F5 in-house typeface — not available from public font services.
 
 ### Proxima Nova
 
@@ -57,7 +55,7 @@ Proxima Nova is separately licensed and is **not** included in the Brand Center 
 - Use **Neusa Wide Bold, sentence case** for campaign headlines and subheads
 - Set headline leading to **1.1× the type size**
 - Use **Proxima Nova Bold, UPPERCASE** with letter-spacing for section headers to contrast with sentence-case headings
-- Sign-offs and CTAs use **Neusa Wide Bold** with a right-facing caret (**›**) in F5 Red to indicate action in digital experiences
+- Sign-offs and CTAs use **Neusa Wide Bold** with a right-facing caret (**›**) in Cloud Red to indicate action in digital experiences
 
 ### Hierarchy Table
 
@@ -70,8 +68,8 @@ Proxima Nova is separately licensed and is **not** included in the Brand Center 
 | Sub-subhead | Proxima Nova | Bold (700) | Sentence | |
 | Body copy | Proxima Nova | Regular (400) | Sentence | |
 | Bullet points | Proxima Nova | Regular (400) | Sentence | |
-| Pull quote | Neusa Wide | Bold (700) | Sentence | F5 Red color; large red quotation marks with attribution below |
-| Sign-off / CTA | Neusa Wide | Bold (700) | Sentence | With right-facing caret (›) in F5 Red |
+| Pull quote | Neusa Wide | Bold (700) | Sentence | Cloud Red color; large red quotation marks with attribution below |
+| Sign-off / CTA | Neusa Wide | Bold (700) | Sentence | With right-facing caret (›) in Cloud Red |
 
 ### Specialized Treatments
 
@@ -177,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
 
 - **`--sl-font`** (Starlight body font variable) → Proxima Nova for body text and UI
 - **`--sl-font-heading`** (custom token) → Neusa Next Pro Wide for heading font reference
-- **`h1`–`h6`** → Font family, weight, and case applied per the F5 type hierarchy
+- **`h1`–`h6`** → Font family, weight, and case applied per the Cloud type hierarchy
 - **Fallback stack**: `system-ui, "Segoe UI", Helvetica, Arial, sans-serif` for fast initial rendering before custom fonts load
 
 ### Starlight Typography Tokens
@@ -188,7 +186,7 @@ The theme overrides these Starlight CSS custom properties:
 |-------|-------|---------|
 | `--sl-font` | `"proximaNova", ...` | Body text, UI elements |
 | `--sl-font-heading` | `"neusaNextProWide", ...` | Custom token for heading font |
-| `--sl-line-height-headings` | `1.1` | F5 brand headline leading |
+| `--sl-line-height-headings` | `1.1` | Cloud brand headline leading |
 | `--sl-text-h1` | `var(--sl-text-5xl)` | 2.625rem headline |
 | `--sl-text-h2` | `var(--sl-text-3xl)` | 1.8125rem subhead |
 | `--sl-text-h3` | `var(--sl-text-2xl)` | 1.5rem section intro |
@@ -213,31 +211,3 @@ To use different font families:
 2. **Update `fonts/font-face.css`** with new `@font-face` rules matching your file names, weights, and styles
 3. **Update `styles/custom.css`** to set `--sl-font` and heading `font-family` to your new family names
 4. **Keep the fallback stack** (`system-ui, "Segoe UI", Helvetica, Arial, sans-serif`) for fast initial rendering
-
-## Source & Licensing
-
-### Brand Center Download
-
-The [F5 Brand Center fonts page](https://brand.f5.com/d/yYzHXTsZ4EGq/elements#/-/fonts-and-typography) provides a downloadable package containing `Neusa-Next-Pro-F5-Inhouse-Type.zip` with six OTF source files:
-
-| OTF File | Weight | Style |
-|----------|--------|-------|
-| `NeusaNextPro-WideLight.otf` | Light (300) | Normal |
-| `NeusaNextPro-WideRegular.otf` | Regular (400) | Normal |
-| `NeusaNextPro-WideItalic.otf` | Regular (400) | Italic |
-| `NeusaNextPro-WideMedium.otf` | Medium (500) | Normal |
-| `NeusaNextPro-WideBold.otf` | Bold (700) | Normal |
-| `NeusaNextPro-WideBoldItalic.otf` | Bold (700) | Italic |
-
-To convert OTF to woff2, use Python's `fonttools` library:
-
-```python
-from fontTools.ttLib import TTFont
-font = TTFont("NeusaNextPro-WideItalic.otf")
-font.flavor = "woff2"
-font.save("neusaNextProWide-400i.woff2")
-```
-
-### Proxima Nova
-
-Proxima Nova is a commercially licensed typeface by Mark Simonson Studio. It is **not** included in the Brand Center download and must be obtained through a separate license. The theme ships with normal-style woff2 files for weights 400, 500, 600, and 700.
