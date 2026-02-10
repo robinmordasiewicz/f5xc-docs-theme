@@ -5,7 +5,7 @@ const docsHome = process.env.DOCS_HOME || 'https://robinmordasiewicz.github.io/f
 const { sidebar, entry, siteTitle, editUrl } = Astro.locals.starlightRoute;
 
 const isIndexPage = entry.filePath ? /(?:^|[\\/])index\.mdx?$/.test(entry.filePath) : false;
-const hideBreadcrumbs = isIndexPage && entry.data.sidebar?.hidden !== false;
+const hideBreadcrumbs = isIndexPage;
 
 function findTrail(entries: typeof sidebar, trail: { label: string }[] = []): { label: string }[] | null {
   for (const item of entries) {
