@@ -357,9 +357,9 @@ h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.5rem;
   background: var(--sl-color-gray-7, #faf9f7);
-  height: 5rem;
+  aspect-ratio: 1;
 }
 
 :root:not([data-theme='light']) .icon-card-image {
@@ -367,8 +367,8 @@ h4, h5, h6 {
 }
 
 .icon-card-image img {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
