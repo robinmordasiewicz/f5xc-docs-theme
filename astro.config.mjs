@@ -46,7 +46,7 @@ export default defineConfig({
         }),
       ],
       logo: {
-        src: 'f5xc-docs-theme/assets/f5-logo.svg',
+        src: 'f5xc-docs-theme/assets/github-avatar.png',
       },
       ...(process.env.GITHUB_REPOSITORY ? {
         editLink: {
