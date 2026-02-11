@@ -1,0 +1,66 @@
+---
+title: Badges
+description: Test page for Badge variants, sizes, and heading badges plugin.
+sidebar:
+  order: 104
+  label: Badges
+  badge:
+    text: New
+    variant: tip
+---
+
+import { Badge } from '@astrojs/starlight/components';
+
+## Inline Badge Variants
+
+All six badge variants rendered inline:
+
+<Badge text="Default" /> <Badge text="Note" variant="note" /> <Badge text="Danger" variant="danger" /> <Badge text="Success" variant="success" /> <Badge text="Tip" variant="tip" /> <Badge text="Caution" variant="caution" />
+
+## Badge Sizes
+
+<Badge text="Small" size="small" /> <Badge text="Medium" size="medium" /> <Badge text="Large" size="large" />
+
+Each size with a variant:
+
+<Badge text="Small Tip" variant="tip" size="small" /> <Badge text="Medium Danger" variant="danger" size="medium" /> <Badge text="Large Success" variant="success" size="large" />
+
+## Heading Badges
+
+The following headings use the `starlight-heading-badges` plugin syntax.
+
+### Feature Complete :badge[Stable]{variant=success}
+
+This heading has a success badge indicating the feature is stable.
+
+### Experimental API :badge[Beta]{variant=caution}
+
+This heading has a caution badge indicating the API is experimental.
+
+### Legacy System :badge[Deprecated]{variant=danger}
+
+This heading has a danger badge indicating deprecation.
+
+### New Feature :badge[New]{variant=tip}
+
+This heading has a tip badge indicating a new feature.
+
+### Documentation :badge[Updated]{variant=note}
+
+This heading has a note badge indicating recent updates.
+
+### Default Badge :badge[Info]
+
+This heading has a default badge with no variant specified.
+
+## Sidebar Badge
+
+Check the sidebar: this page has a "New" badge with the `tip` variant applied via frontmatter.
+
+## Theme Checks
+
+- Badge background colors per variant differ between dark and light modes
+- Dark mode uses deep tones (red-4, jade-4, tangerine-4, eggplant-4, bay-4)
+- Light mode uses light tones (red-1, jade-1, tangerine-1, eggplant-1, bay-1)
+- Heading badges align inline with heading text
+- Sidebar badge renders next to the page label

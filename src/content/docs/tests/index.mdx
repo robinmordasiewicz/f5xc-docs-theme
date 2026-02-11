@@ -1,0 +1,31 @@
+---
+title: Theme Test Suite
+description: Visual validation pages that exercise every theme feature during build.
+sidebar:
+  order: 100
+  label: Overview
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+This test suite provides live validation pages for the f5xc-docs-theme. Each page exercises a specific set of theme features so you can verify rendering after changes.
+
+## How to use
+
+1. Run `npx astro dev` for hot-reload development, or `npx astro build && npx astro preview` for a production build.
+2. Visit each test page below and verify the components render correctly.
+3. Toggle dark/light theme via Starlight's built-in switcher on every page to check both modes.
+
+## Test Pages
+
+<CardGrid>
+  <LinkCard title="Asides" href="/tests/asides/" description="All 4 aside types, custom titles, rich content inside asides." />
+  <LinkCard title="Tabs & Steps" href="/tests/tabs-and-steps/" description="Tabs, syncKey, icons, and Steps component." />
+  <LinkCard title="Cards" href="/tests/cards/" description="Card, CardGrid, stagger layout, and LinkCard." />
+  <LinkCard title="Badges" href="/tests/badges/" description="Badge variants, sizes, and heading badges plugin." />
+  <LinkCard title="Code Blocks" href="/tests/code-blocks/" description="Languages, terminal mode, line highlights, and diff." />
+  <LinkCard title="Mermaid Diagrams" href="/tests/mermaid-diagrams/" description="Flowchart, sequence, pie, class, state, and gantt diagrams." />
+  <LinkCard title="Typography" href="/tests/typography/" description="Headings, text styles, lists, blockquotes, and footnotes." />
+  <LinkCard title="Tables & Images" href="/tests/tables-and-images/" description="Tables, image zoom, FileTree, and Icon." />
+  <LinkCard title="Custom CSS" href="/tests/custom-css/" description="Swatch grid, icon grid, scroll-to-top trigger." />
+</CardGrid>
