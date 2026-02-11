@@ -1,0 +1,104 @@
+---
+title: Typography
+description: Test page for headings, text styles, lists, blockquotes, and footnotes.
+sidebar:
+  order: 107
+  label: Typography
+---
+
+## Heading Level 2
+
+### Heading Level 3
+
+#### Heading Level 4
+
+##### Heading Level 5
+
+###### Heading Level 6
+
+## Text Styles
+
+This is **bold text** for emphasis.
+
+This is *italic text* for subtle emphasis.
+
+This is ~~strikethrough text~~ for deprecated content.
+
+This is `inline code` for technical references.
+
+This is ***bold italic text*** for strong emphasis.
+
+This is a combination: **bold with `inline code` inside** and *italic with `code` inside*.
+
+## Ordered List
+
+1. First item in the ordered list
+2. Second item with **bold text**
+3. Third item with `inline code`
+4. Fourth item with a [link to Astro](https://astro.build)
+
+## Unordered List
+
+- First bullet point
+- Second bullet with **emphasis**
+- Third bullet with `code reference`
+- Fourth bullet with a [link](https://starlight.astro.build)
+
+## Nested Lists
+
+1. Top-level ordered item
+   - Nested unordered item A
+   - Nested unordered item B
+     1. Deep nested ordered item
+     2. Another deep nested item
+   - Back to first nesting level
+2. Second top-level item
+   - Another nested item
+
+## Blockquotes
+
+> This is a single-line blockquote.
+
+> This is a multi-line blockquote.
+>
+> It spans multiple paragraphs and can contain **bold**, *italic*, and `code` formatting.
+
+> Nested blockquotes:
+>
+> > This is a nested blockquote inside the outer one.
+> >
+> > It can contain its own formatting.
+
+## Horizontal Rule
+
+Content above the rule.
+
+---
+
+Content below the rule.
+
+## Links
+
+- Internal link: [Back to test suite overview](/tests/)
+- External link: [Starlight Documentation](https://starlight.astro.build)
+- Link with title: [Astro](https://astro.build "Astro Framework Homepage")
+
+## Footnotes
+
+Here is a sentence with a footnote reference[^1].
+
+And another sentence with a different footnote[^2].
+
+[^1]: This is the first footnote content. It appears at the bottom of the page.
+
+[^2]: This is the second footnote. It can contain **formatting** and `code`.
+
+## Theme Checks
+
+- H2 and H3 use `neusaNextProWide` font family with weight 700/500
+- H4, H5, H6 use `proximaNova` font, uppercase, with letter-spacing 0.05em
+- Link accent color is `#f06680` in dark mode, `#e4002b` in light mode
+- Inline code has a background tint from `--sl-color-gray-5`
+- Blockquote border-left is visible in both themes
+- Footnote references are superscripted and linked
+- Horizontal rule has appropriate contrast

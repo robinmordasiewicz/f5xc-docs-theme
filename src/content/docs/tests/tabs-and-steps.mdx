@@ -1,0 +1,118 @@
+---
+title: Tabs & Steps
+description: Test page for Tabs, synced tabs, and Steps components.
+sidebar:
+  order: 102
+  label: Tabs & Steps
+---
+
+import { Tabs, TabItem, Steps } from '@astrojs/starlight/components';
+
+## Basic Tabs
+
+<Tabs>
+  <TabItem label="Overview">
+    This is the overview tab content. It contains plain text to verify basic tab rendering.
+  </TabItem>
+  <TabItem label="Details">
+    This is the details tab. Switching between tabs should be instant with no page reload.
+  </TabItem>
+</Tabs>
+
+## Tabs with Mixed Content
+
+<Tabs>
+  <TabItem label="Text">
+    Plain paragraph content in the first tab.
+  </TabItem>
+  <TabItem label="Code">
+    ```javascript
+    const greeting = "Hello from a code block inside a tab!";
+    console.log(greeting);
+    ```
+  </TabItem>
+  <TabItem label="List">
+    - Item one inside a tab
+    - Item two with **bold text**
+    - Item three with `inline code`
+  </TabItem>
+</Tabs>
+
+## Synced Tabs
+
+These two tab groups share `syncKey="pkg"`. Selecting a tab in one group should update the other.
+
+**Install command:**
+
+<Tabs syncKey="pkg">
+  <TabItem label="npm">
+    ```bash
+    npm install f5xc-docs-theme
+    ```
+  </TabItem>
+  <TabItem label="pnpm">
+    ```bash
+    pnpm add f5xc-docs-theme
+    ```
+  </TabItem>
+  <TabItem label="yarn">
+    ```bash
+    yarn add f5xc-docs-theme
+    ```
+  </TabItem>
+</Tabs>
+
+**Run command:**
+
+<Tabs syncKey="pkg">
+  <TabItem label="npm">
+    ```bash
+    npm run dev
+    ```
+  </TabItem>
+  <TabItem label="pnpm">
+    ```bash
+    pnpm dev
+    ```
+  </TabItem>
+  <TabItem label="yarn">
+    ```bash
+    yarn dev
+    ```
+  </TabItem>
+</Tabs>
+
+## Steps
+
+<Steps>
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/example/repo.git
+   cd repo
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the dev server**
+
+   ```bash
+   npm run dev
+   ```
+
+   The site will be available at `http://localhost:4321`.
+
+</Steps>
+
+## Theme Checks
+
+- Tab active indicator color uses the accent color
+- Step connector line is visible between numbered steps
+- Step numbers have adequate contrast in both light and dark modes
+- Synced tabs stay in sync when switching between groups
+- Code blocks inside tabs render with proper syntax highlighting

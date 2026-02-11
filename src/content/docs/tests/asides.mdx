@@ -1,0 +1,71 @@
+---
+title: Asides
+description: Test page for all aside variants and rich content inside asides.
+sidebar:
+  order: 101
+  label: Asides
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+## Markdown Fence Syntax
+
+Each aside type uses the `:::` fence syntax with its default title.
+
+:::note
+This is a **note** aside. It draws attention to supplementary information the reader should be aware of.
+:::
+
+:::tip
+This is a **tip** aside. It highlights a best practice or useful shortcut.
+:::
+
+:::caution
+This is a **caution** aside. It warns about a potential pitfall or non-obvious behavior.
+:::
+
+:::danger
+This is a **danger** aside. It flags a destructive or irreversible action.
+:::
+
+## Component Syntax with Custom Titles
+
+<Aside type="note" title="Custom Note Title">
+This aside uses the `<Aside>` component with a custom title override.
+</Aside>
+
+<Aside type="tip" title="Pro Tip">
+You can nest **bold**, *italic*, and `inline code` inside aside components.
+</Aside>
+
+<Aside type="caution" title="Watch Out">
+Be careful when upgrading dependencies — check the changelog first.
+</Aside>
+
+<Aside type="danger" title="Destructive Action">
+Running `git reset --hard` will permanently discard uncommitted changes.
+</Aside>
+
+## Rich Content Inside Asides
+
+:::tip[Aside with mixed content]
+Here is a code block inside an aside:
+
+```bash
+npm install @astrojs/starlight
+```
+
+A list of items:
+
+- First item with **bold text**
+- Second item with `inline code`
+- Third item with a [link to Starlight docs](https://starlight.astro.build)
+:::
+
+## Theme Checks
+
+- Border-left color differs per variant (blue, purple, yellow, red)
+- Background tint is visible in both light and dark modes
+- Text contrast remains readable in both themes
+- Box-shadow is subtle but visible around each aside
+- Rounded corners (0.75rem) on all asides
