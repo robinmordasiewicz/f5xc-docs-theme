@@ -50,6 +50,13 @@
   "publishConfig": {
     "access": "public"
   },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0"
+  },
+  "scripts": {
+    "test:visual": "playwright test",
+    "test:visual:update": "playwright test --update-snapshots"
+  },
   "peerDependencies": {
     "@astrojs/starlight": ">=0.34.0"
   },
