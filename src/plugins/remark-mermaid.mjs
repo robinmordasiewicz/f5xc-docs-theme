@@ -2,12 +2,9 @@ import { visit } from 'unist-util-visit';
 
 export default function remarkMermaid() {
   return (tree) => {
-    let hasMermaid = false;
-
     visit(tree, 'code', (node, index, parent) => {
       if (node.lang !== 'mermaid') return;
 
-      hasMermaid = true;
       const escaped = node.value
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
@@ -19,14 +16,7 @@ export default function remarkMermaid() {
       };
     });
 
-    if (hasMermaid) {
-      tree.children.push({
-        type: 'html',
-        value: `<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
-</script>`,
-      });
-    }
+    // Note: Mermaid CDN script is loaded via Starlight head config in astro.config.mjs.
+    // Script injection via remark HTML nodes is stripped by MDX/Astro for security.
   };
 }
