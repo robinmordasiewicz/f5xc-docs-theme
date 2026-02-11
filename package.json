@@ -23,7 +23,8 @@
     "./components/MarkdownContent.astro": "./components/MarkdownContent.astro",
     "./assets/f5-logo.svg": "./assets/f5-logo.svg",
     "./assets/github-avatar.png": "./assets/github-avatar.png",
-    "./route-middleware": "./route-middleware.ts"
+    "./route-middleware": "./route-middleware.ts",
+    "./src/plugins/remark-mermaid.mjs": "./src/plugins/remark-mermaid.mjs"
   },
   "files": [
     "index.ts",
@@ -32,7 +33,8 @@
     "fonts/",
     "styles/",
     "assets/",
-    "components/"
+    "components/",
+    "src/"
   ],
   "keywords": [
     "starlight",
@@ -52,8 +54,10 @@
     "@astrojs/starlight": ">=0.34.0"
   },
   "dependencies": {
+    "@astrojs/react": "^4.0.0",
     "starlight-heading-badges": "^0.6.1",
     "starlight-image-zoom": "^0.13.2",
+    "starlight-llms-txt": "^0.7.0",
     "starlight-mega-menu": "^1.0.1",
     "starlight-page-actions": "^0.5.0",
     "starlight-plugin-icons": "^1.1.3",
