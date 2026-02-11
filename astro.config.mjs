@@ -10,6 +10,7 @@ import starlightVideosPlugin from 'starlight-videos';
 import starlightPageActions from 'starlight-page-actions';
 import { starlightIconsPlugin } from 'starlight-plugin-icons';
 import starlightLlmsTxt from 'starlight-llms-txt';
+import starlightMegaMenu from 'starlight-mega-menu';
 
 export default defineConfig({
   site: process.env.DOCS_SITE || 'https://robinmordasiewicz.github.io',
@@ -21,6 +22,90 @@ export default defineConfig({
     starlight({
       title: process.env.DOCS_TITLE || 'Documentation',
       plugins: [
+        starlightMegaMenu({
+          items: [
+            {
+              label: 'Products',
+              content: {
+                layout: 'grid',
+                columns: 2,
+                categories: [
+                  {
+                    title: 'App Security',
+                    items: [
+                      {
+                        label: 'Web App & API Protection',
+                        description: 'Comprehensive app and API security',
+                        href: '/products/waap/',
+                      },
+                      {
+                        label: 'Bot Defense',
+                        description: 'AI-driven bot mitigation',
+                        href: '/products/bot-defense/',
+                      },
+                    ],
+                  },
+                  {
+                    title: 'Networking',
+                    items: [
+                      {
+                        label: 'Multi-Cloud Networking',
+                        description: 'Connect apps across clouds',
+                        href: '/products/mcn/',
+                      },
+                      {
+                        label: 'DNS & DNS Load Balancing',
+                        description: 'Intelligent DNS services',
+                        href: '/products/dns/',
+                      },
+                    ],
+                  },
+                ],
+                footer: {
+                  label: 'View all products',
+                  href: '/products/',
+                  description: 'Explore the full F5 Distributed Cloud suite',
+                },
+              },
+            },
+            {
+              label: 'Solutions',
+              content: {
+                layout: 'list',
+                categories: [
+                  {
+                    title: 'By Use Case',
+                    items: [
+                      {
+                        label: 'API Security',
+                        description: 'Protect APIs across multi-cloud environments',
+                        href: '/solutions/api-security/',
+                      },
+                      {
+                        label: 'Multi-Cloud Networking',
+                        description: 'Secure connectivity across any cloud',
+                        href: '/solutions/multi-cloud/',
+                      },
+                      {
+                        label: 'Edge Computing',
+                        description: 'Deploy apps at the edge with F5 XC AppStack',
+                        href: '/solutions/edge/',
+                      },
+                    ],
+                  },
+                ],
+              },
+            },
+            {
+              label: 'Docs',
+              href: '/',
+            },
+            {
+              label: 'Support',
+              href: 'https://my.f5.com/manage/s/',
+            },
+          ],
+        }),
         starlightVideosPlugin(),
         starlightImageZoom(),
         f5xcDocsTheme(),
