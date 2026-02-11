@@ -67,6 +67,47 @@
   --sl-color-bg-badge-success: var(--f5-jade-4);
   --sl-color-bg-badge-caution: var(--f5-tangerine-4);
   --sl-color-bg-badge-tip: var(--f5-eggplant-4);
+
+  /* ===== Design Token Scale ===== */
+
+  /* Border radius */
+  --f5-radius-xs: 0.1875rem;
+  --f5-radius-sm: 0.3125rem;
+  --f5-radius-md: 0.375rem;
+  --f5-radius-lg: 0.5rem;
+  --f5-radius-full: 999px;
+
+  /* Shadows — dark mode (neutral-tinted #cccccc base) */
+  --f5-shadow-low:
+    0px 1px 1px 0px #cccccc0a,
+    0px 2px 2px 0px #cccccc0a;
+  --f5-shadow-mid:
+    0px 2px 3px 0px #cccccc0d,
+    0px 8px 16px -10px #cccccc1a;
+  --f5-shadow-high:
+    0px 2px 3px 0px #cccccc1a,
+    0px 16px 16px -10px #cccccc1a;
+  --f5-shadow-higher:
+    0px 2px 3px 0px #cccccc0d,
+    0px 12px 28px 0px #cccccc26;
+
+  /* Borders — dark mode (alpha-transparent) */
+  --f5-border-faint: #f5f5f51a;
+  --f5-border-default: #f5f5f533;
+  --f5-border-strong: #cccccc66;
+
+  /* Surfaces — dark mode */
+  --f5-surface-hover: var(--f5-black-3);
+  --f5-surface-active: var(--f5-black-2);
+
+  /* Transitions */
+  --f5-transition-fast: 0.15s ease;
+  --f5-transition-base: 0.2s ease;
+  --f5-transition-bounce: 0.2s cubic-bezier(0.68, -0.2, 0.265, 1.15);
+
+  /* Focus rings */
+  --f5-focus-action: inset 0 0 0 1px var(--f5-river), 0 0 0 3px var(--f5-river-2);
+  --f5-focus-critical: inset 0 0 0 1px var(--f5-red-3), 0 0 0 3px var(--f5-red-2);
 }
 
 /* ===== Light Mode ===== */
@@ -90,6 +131,29 @@
   --sl-color-bg-badge-success: var(--f5-jade-1);
   --sl-color-bg-badge-caution: var(--f5-tangerine-1);
   --sl-color-bg-badge-tip: var(--f5-eggplant-1);
+
+  /* Shadows — light mode (#343434 base) */
+  --f5-shadow-low:
+    0px 1px 1px 0px #3434340d,
+    0px 2px 2px 0px #3434340d;
+  --f5-shadow-mid:
+    0px 2px 3px 0px #3434341a,
+    0px 8px 16px -10px #34343433;
+  --f5-shadow-high:
+    0px 2px 3px 0px #34343426,
+    0px 16px 16px -10px #34343433;
+  --f5-shadow-higher:
+    0px 2px 3px 0px #3434341a,
+    0px 12px 28px 0px #34343440;
+
+  /* Borders — light mode */
+  --f5-border-faint: #3434341a;
+  --f5-border-default: #34343433;
+  --f5-border-strong: #22222266;
+
+  /* Surfaces — light mode */
+  --f5-surface-hover: var(--f5-white-2);
+  --f5-surface-active: var(--f5-white-3);
 }
 
 /* ===== Fonts & Layout ===== */
@@ -134,13 +198,10 @@ h4, h5, h6 {
 }
 
 .mermaid-container {
-  border: 1px solid var(--sl-color-gray-5);
-  border-radius: 0.75rem;
+  border: 1px solid var(--f5-border-default);
+  border-radius: var(--f5-radius-lg);
   padding: 1.5rem;
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    0 8px 16px rgba(0, 0, 0, 0.08),
-    0 24px 48px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--f5-shadow-mid);
   margin-block: 1.5rem;
   background: #fff;
 }
@@ -148,7 +209,7 @@ h4, h5, h6 {
 /* Force white background on Mermaid SVG for dark mode compatibility */
 .mermaid-container svg {
   background: white !important;
-  border-radius: 0.5rem;
+  border-radius: var(--f5-radius-md);
 }
 
 /* fill is a valid SVG presentation property (CSS Masking/SVG spec) */
@@ -158,21 +219,15 @@ h4, h5, h6 {
 }
 
 .starlight-aside {
-  border-radius: 0.75rem;
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    0 8px 16px rgba(0, 0, 0, 0.08),
-    0 24px 48px rgba(0, 0, 0, 0.12);
+  border-radius: var(--f5-radius-md);
+  box-shadow: var(--f5-shadow-low);
 }
 
 .expressive-code .frame {
-  --header-border-radius: 0.75rem;
-  border-radius: 0.75rem;
+  --header-border-radius: var(--f5-radius-md);
+  border-radius: var(--f5-radius-md);
   overflow: hidden;
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    0 8px 16px rgba(0, 0, 0, 0.08),
-    0 24px 48px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--f5-shadow-mid);
 }
 
 /* macOS iTerm-style window frame for terminal code blocks */
@@ -187,7 +242,7 @@ h4, h5, h6 {
 .expressive-code .frame.is-terminal .header {
   padding-block: 0.25rem;
   border: none;
-  border-radius: 0.75rem 0.75rem 0 0;
+  border-radius: var(--f5-radius-md) var(--f5-radius-md) 0 0;
   background: #323232 !important;
   color: #ccc !important;
 }
@@ -209,7 +264,7 @@ h4, h5, h6 {
 
 .expressive-code .frame.is-terminal pre {
   border: none;
-  border-radius: 0 0 0.75rem 0.75rem;
+  border-radius: 0 0 var(--f5-radius-md) var(--f5-radius-md);
 }
 
 :root:not([data-theme="light"]) .expressive-code .frame.is-terminal pre {
@@ -265,16 +320,18 @@ h4, h5, h6 {
   align-items: center;
   gap: 0.375rem;
   padding: 0.25rem 0.75rem;
-  border-radius: 999px;
+  border-radius: var(--f5-radius-full);
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--sl-color-gray-3);
   background: var(--sl-color-gray-6);
-  border: 1px solid var(--sl-color-gray-5);
+  border: 1px solid var(--f5-border-default);
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
-  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  transition: color var(--f5-transition-fast),
+              background var(--f5-transition-fast),
+              border-color var(--f5-transition-fast);
 }
 
 .edit-link:hover {
@@ -297,13 +354,10 @@ h4, h5, h6 {
 }
 
 .swatch {
-  border-radius: 0.75rem;
+  border-radius: var(--f5-radius-md);
   overflow: hidden;
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    0 8px 16px rgba(0, 0, 0, 0.08),
-    0 24px 48px rgba(0, 0, 0, 0.12);
-  border: 1px solid var(--sl-color-gray-5);
+  box-shadow: var(--f5-shadow-low);
+  border: 1px solid var(--f5-border-default);
 }
 
 .swatch-color {
@@ -343,13 +397,10 @@ h4, h5, h6 {
 }
 
 .icon-card {
-  border-radius: 0.75rem;
+  border-radius: var(--f5-radius-md);
   overflow: hidden;
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    0 8px 16px rgba(0, 0, 0, 0.08),
-    0 24px 48px rgba(0, 0, 0, 0.12);
-  border: 1px solid var(--sl-color-gray-5);
+  box-shadow: var(--f5-shadow-low);
+  border: 1px solid var(--f5-border-default);
   text-align: center;
   margin: 0;
 }
@@ -414,4 +465,163 @@ body {
   --scalar-background-1: unset;
   --scalar-background-2: unset;
   --scalar-background-3: unset;
+}
+
+/* ===== Phase 2: Sidebar Navigation Enhancement ===== */
+.sidebar-content a {
+  border-radius: var(--f5-radius-sm);
+  transition: background-color var(--f5-transition-fast),
+              color var(--f5-transition-fast);
+}
+
+.sidebar-content a:hover {
+  background-color: var(--f5-surface-hover);
+}
+
+.sidebar-content a[aria-current="page"] {
+  background-color: var(--f5-surface-active);
+  font-weight: 600;
+  border-inline-start: 3px solid var(--sl-color-accent);
+  padding-inline-start: calc(0.5rem - 3px);
+}
+
+/* ===== Phase 3: Card Hover Effects + Link Transitions ===== */
+.swatch, .icon-card {
+  transition: box-shadow var(--f5-transition-base),
+              transform var(--f5-transition-base);
+}
+
+.swatch:hover, .icon-card:hover {
+  box-shadow: var(--f5-shadow-mid);
+  transform: translateY(-1px);
+}
+
+.sl-markdown-content a {
+  transition: color var(--f5-transition-fast);
+}
+
+/* ===== Phase 4: Button Component System ===== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--f5-red);
+  color: var(--f5-white);
+  border: none;
+  border-radius: var(--f5-radius-sm);
+  padding: 0.625rem 1rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  font-family: var(--sl-font);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--f5-transition-fast),
+              box-shadow var(--f5-transition-fast);
+}
+.btn-primary:hover {
+  background: var(--f5-red-3);
+  box-shadow: var(--f5-shadow-low);
+  text-decoration: none;
+  color: var(--f5-white);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--sl-color-gray-2);
+  border: 1px solid var(--f5-border-default);
+  border-radius: var(--f5-radius-sm);
+  padding: 0.625rem 1rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  font-family: var(--sl-font);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--f5-transition-fast),
+              border-color var(--f5-transition-fast);
+}
+.btn-secondary:hover {
+  background: var(--f5-surface-hover);
+  border-color: var(--f5-border-strong);
+  text-decoration: none;
+}
+
+.btn-tertiary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--sl-color-accent);
+  border: none;
+  border-radius: var(--f5-radius-sm);
+  padding: 0.625rem 1rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  font-family: var(--sl-font);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--f5-transition-fast);
+}
+.btn-tertiary:hover {
+  background: var(--f5-surface-hover);
+  text-decoration: none;
+}
+
+.btn-sm { padding: 0.375rem 0.75rem; font-size: 0.8125rem; }
+.btn-lg { padding: 0.75rem 1.5rem; font-size: 1rem; }
+
+/* ===== Phase 5: Hero Gradients ===== */
+.hero-gradient-primary {
+  background: linear-gradient(135deg, var(--f5-river-2) 0%, var(--f5-river) 100%);
+}
+
+.hero-gradient-eggplant {
+  background: linear-gradient(135deg, var(--f5-eggplant-2) 0%, var(--f5-eggplant) 100%);
+}
+
+.hero-gradient-red {
+  background: linear-gradient(135deg, var(--f5-red-2) 0%, var(--f5-red) 100%);
+}
+
+:root[data-theme='light'] .hero-gradient-faint {
+  background: linear-gradient(180deg, #faf9f7 0%, #f5f5f5 100%);
+}
+:root:not([data-theme='light']) .hero-gradient-faint {
+  background: linear-gradient(180deg, #222222 0%, #000000 100%);
+}
+
+.hero-fade {
+  position: relative;
+}
+.hero-fade::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, transparent, var(--sl-color-black));
+  pointer-events: none;
+}
+
+/* ===== Phase 6: Focus Rings + Final Transition Polish ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: none;
+  box-shadow: var(--f5-focus-action);
+}
+
+.breadcrumbs a {
+  transition: color var(--f5-transition-fast);
+}
+
+.social-links a {
+  transition: opacity var(--f5-transition-base),
+              color var(--f5-transition-base);
 }
