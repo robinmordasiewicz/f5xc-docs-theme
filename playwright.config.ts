@@ -14,20 +14,7 @@ export default defineConfig({
   },
   use: {
     baseURL,
+    browserName: "chromium",
     viewport: { width: 1280, height: 800 },
   },
-  projects: [
-    {
-      name: "chromium-dark",
-      use: {
-        browserName: "chromium",
-      },
-    },
-    {
-      name: "chromium-light",
-      use: {
-        browserName: "chromium",
-      },
-    },
-  ],
 });
