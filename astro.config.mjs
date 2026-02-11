@@ -130,6 +130,13 @@ export default defineConfig({
             : [],
         }),
       ],
+      head: [
+        {
+          tag: 'script',
+          attrs: { type: 'module' },
+          content: `import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'; mermaid.initialize({ startOnLoad: true, theme: 'neutral' });`,
+        },
+      ],
       logo: {
         src: 'f5xc-docs-theme/assets/github-avatar.png',
       },
