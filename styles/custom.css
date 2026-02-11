@@ -385,4 +385,21 @@ h4, h5, h6 {
   word-break: break-word;
 }
 
-/* release pipeline verified */
+/* ===== Scroll-to-Top Button Size Override ===== */
+.scroll-to-top-button {
+  width: 36px !important;
+  height: 36px !important;
+}
+.scroll-to-top-button svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+.scroll-to-top-button .scroll-progress-ring {
+  width: 36px !important;
+  height: 36px !important;
+}
+.scroll-to-top-button .scroll-progress-ring circle {
+  cx: 18;
+  cy: 18;
+  r: 16;
+}
