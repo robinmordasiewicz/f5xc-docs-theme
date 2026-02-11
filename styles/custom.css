@@ -403,3 +403,15 @@ h4, h5, h6 {
   cy: 18;
   r: 16;
 }
+
+/* ===== Prevent Scalar API Viewer Body Pollution ===== */
+body.dark-mode,
+body.light-mode {
+  background-color: var(--sl-color-bg) !important;
+  color: var(--sl-color-text) !important;
+}
+body {
+  --scalar-background-1: unset;
+  --scalar-background-2: unset;
+  --scalar-background-3: unset;
+}
