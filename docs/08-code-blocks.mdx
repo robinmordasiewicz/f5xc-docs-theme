@@ -1,12 +1,13 @@
 ---
 title: Code Blocks
-description: Test page for syntax highlighting, terminal mode, line highlights, and diff blocks.
+description: Syntax highlighting, terminal mode, line highlights, diff blocks, and CSS reference for Expressive Code styling.
 sidebar:
-  order: 105
-  label: Code Blocks
+  order: 8
 ---
 
-## Language Blocks
+All code blocks use [Expressive Code](https://expressive-code.com/) with custom styling defined in `styles/custom.css`.
+
+## Language Examples
 
 ### JavaScript
 
@@ -108,13 +109,40 @@ const config: Config = {
 
 ## Terminal Mode
 
+Terminal-style code blocks (fenced with ` ```bash ` or ` ```sh `) receive an iTerm-inspired window frame with macOS traffic light dots.
+
 ```bash title="Terminal"
 npm install f5xc-docs-theme
 npx astro build
 npx astro preview
 ```
 
-## File Name Title
+### Terminal CSS Reference
+
+```css
+/* Frame border */
+.expressive-code .frame.is-terminal {
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Dark header with traffic light SVG dots */
+.expressive-code .frame.is-terminal .header {
+  background: #323232 !important;
+  color: #ccc !important;
+}
+
+/* Dark mode terminal body — Tokyo Night-inspired */
+:root:not([data-theme="light"]) .expressive-code .frame.is-terminal pre {
+  background: #1a1b26 !important;
+}
+
+/* Light mode border override */
+:root[data-theme="light"] .expressive-code .frame.is-terminal {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+```
+
+## File Name Titles
 
 ```ts title="src/config.ts"
 export default {
@@ -144,7 +172,7 @@ const config = {
 };
 ```
 
-## Diff Block
+## Diff Blocks
 
 ```diff
 - const oldValue = "deprecated";
@@ -152,6 +180,35 @@ const config = {
   const unchanged = "stays";
 - removeThis();
 + addThis();
+```
+
+## CSS Reference
+
+### Frame Styling
+
+All code blocks get rounded corners and a layered shadow:
+
+```css
+.expressive-code .frame {
+  --header-border-radius: 0.75rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 8px 16px rgba(0,0,0,0.08), 0 24px 48px rgba(0,0,0,0.12);
+}
+```
+
+### Theme-Aware Borders
+
+```css
+/* Dark mode (default) */
+.expressive-code .frame.is-terminal {
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Light mode */
+:root[data-theme="light"] .expressive-code .frame.is-terminal {
+  border-color: rgba(0, 0, 0, 0.2);
+}
 ```
 
 ## Theme Checks
