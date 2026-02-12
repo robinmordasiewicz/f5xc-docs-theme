@@ -4,6 +4,4 @@ docs/
 .gitignore
 CLAUDE.md
 CONTRIBUTING.md
-README.md
-LICENSE
 release.config.js
