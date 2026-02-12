@@ -29,11 +29,12 @@
   "files": [
     "index.ts",
     "route-middleware.ts",
+    "astro.config.mjs",
     "fonts/",
     "styles/",
     "assets/",
     "components/",
-    "src/plugins/"
+    "src/"
   ],
   "keywords": [
     "starlight",
