@@ -12,11 +12,9 @@ export default function remarkMermaid() {
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;');
 
-      const encoded = encodeURIComponent(node.value);
-
       parent.children[index] = {
         type: 'html',
-        value: `<div class="mermaid-container"><pre class="mermaid" data-mermaid-src="${encoded}">${escaped}</pre></div>`,
+        value: `<div class="mermaid-container" data-mermaid-src="${escaped}"><pre class="mermaid">${escaped}</pre></div>`,
       };
     });
 
