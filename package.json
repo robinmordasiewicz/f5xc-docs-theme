@@ -23,11 +23,13 @@
     "./components/MarkdownContent.astro": "./components/MarkdownContent.astro",
     "./assets/f5-logo.svg": "./assets/f5-logo.svg",
     "./assets/github-avatar.png": "./assets/github-avatar.png",
+    "./config": "./config.ts",
     "./route-middleware": "./route-middleware.ts",
     "./src/plugins/remark-mermaid.mjs": "./src/plugins/remark-mermaid.mjs"
   },
   "files": [
     "index.ts",
+    "config.ts",
     "route-middleware.ts",
     "astro.config.mjs",
     "fonts/",
@@ -62,6 +64,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.0.0",
+    "unist-util-visit": "^5.0.0",
     "starlight-heading-badges": "^0.6.1",
     "starlight-image-zoom": "^0.13.2",
     "starlight-llms-txt": "^0.7.0",
