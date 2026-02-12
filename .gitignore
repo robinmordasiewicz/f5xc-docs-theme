@@ -25,9 +25,6 @@ dist/
 .astro/
 site/
 
-# Screenshots (root-level only)
-/*.png
-
 # Python
 __pycache__/
 *.py[cod]
